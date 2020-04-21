@@ -1,0 +1,32 @@
+name: "HP"
+navbar:
+  title: "Takuya Kubo"
+  left:
+    - text: "Home"
+      icon: fa-home
+      href: index.html
+    - text: "Works"
+      icon: fa-files-o
+      href: works.html
+    - text: "Tools"
+      icon: fa-toolbox
+      href: tools.html
+    - text: "R Tutorial"
+      icon: fa-file-code
+      href: r-tutorial.html
+  right:
+    - text: ""
+      icon: fa-github
+      href: "https://github.com/TakuyaK0625"
+
+output:
+  html_document:
+    theme: flatly
+    highlight: textmate
+    toc: true
+    toc_float:
+      collapse: false
+    df_print: "tibble"
+    css: style.css
+output_dir: "docs"
+
