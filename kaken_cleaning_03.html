@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>「研究分担者」列の展開</title>
+
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.12.1/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Takuya Kubo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="works.html">
+    <span class="fa fa-files-o"></span>
+     
+    Works
+  </a>
+</li>
+<li>
+  <a href="tools.html">
+    <span class="fa fa-toolbox"></span>
+     
+    Tools
+  </a>
+</li>
+<li>
+  <a href="r-tutorial.html">
+    <span class="fa fa-file-code"></span>
+     
+    R Tutorial
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/TakuyaK0625">
+    <span class="fa fa-github"></span>
+     
+    
+  </a>
+</li>
+<li>
+  <a href="https://twitter.com/Takuyak0625">
+    <span class="fa fa-twitter"></span>
+     
+    
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">「研究分担者」列の展開</h1>
+
+</div>
+
+
+<p><br></p>
+<div id="はじめに" class="section level2">
+<h2>０. はじめに</h2>
+<p>このページはKAKENHIデータベースからダウンロードできるCSVファイルの「研究分担者」列をキレイにする方法を紹介していきます。具体的には、複数人の研究者情報が格納されている場合に研究分担者が１人１行になるように展開していきます。</p>
+<p><br> このようなデータを <div id="htmlwidget-b837509ba007434beef0" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b837509ba007434beef0">{"x":{"filter":"none","data":[["A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)"],["B山 B介 BB大学, BB学部, 教授 (XXXXXXXX)\\nC本 C子 CC大学, CC研究所, 准教授 (XXXXXXXX)"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>研究代表者<\/th>\n      <th>研究分担者<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script> このようにします。 <div id="htmlwidget-c55929429ed2a92cf6fd" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c55929429ed2a92cf6fd">{"x":{"filter":"none","data":[["A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)","A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)"],["B山 B介 BB大学, BB学部, 教授 (XXXXXXXX)","C本 C子 CC大学, CC研究所, 准教授 (XXXXXXXX)"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>研究代表者<\/th>\n      <th>研究分担者<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script></p>
+<p><br></p>
+</div>
+<div id="下準備" class="section level2">
+<h2>１. 下準備</h2>
+<p>必要なパッケージは以下の通りです。個人情報が多いため、サイト上では結果を表示させませんが、2019年度の採択課題を想定して進めていきます。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># パッケージの読み込み</span>
+<span class="kw">library</span>(data.table)   <span class="co"># 高速なデータインポートのため</span>
+<span class="kw">library</span>(dplyr)        <span class="co"># データの整理のため</span>
+<span class="kw">library</span>(DT)           <span class="co"># 集計表の出力のため</span>
+<span class="kw">library</span>(stringr)      <span class="co"># 文字列操作のため</span>
+<span class="kw">library</span>(tidyr)        <span class="co"># 入れ子構造の解除のため</span>
+
+<span class="co"># インストールされていない場合は、以下のコマンドの「#」を外して実行</span>
+<span class="co"># install.packages(&quot;data.table&quot;)</span>
+<span class="co"># install.packages(&quot;dplyr&quot;)</span>
+<span class="co"># install.packages(&quot;DT&quot;)</span>
+<span class="co"># install.packages(&quot;stringr&quot;)</span>
+
+d &lt;-<span class="st"> </span><span class="kw">fread</span>(<span class="st">&quot;kaken_2019_20191201.csv&quot;</span>)</code></pre></div>
+<p><br></p>
+</div>
+<div id="パターンの確認" class="section level2">
+<h2>２. パターンの確認</h2>
+<p>まず、研究分担者列に入っている値の形式を確認しておきます。基本的には研究代表者と同様の形式で値が格納されていますが、研究分担者が複数いる場合には「\n」によって区切られているようです。 <br></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(<span class="st">&quot;研究分担者&quot;</span>)  <span class="op">%&gt;%</span><span class="st">       </span><span class="co"># 研究分担者列のみ抽出</span>
+<span class="st">  </span><span class="kw">filter</span>(研究分担者 <span class="op">!=</span><span class="st"> &quot;&quot;</span>) <span class="op">%&gt;%</span><span class="st">    </span><span class="co"># 研究分担者が空白ではない行のみ抽出</span>
+<span class="st">  </span><span class="kw">head</span>()                          <span class="co"># 最初の５                          </span></code></pre></div>
+<p><br></p>
+</div>
+<div id="研究分担者列の展開" class="section level2">
+<h2>３. 研究分担者列の展開</h2>
+<p>研究分担者列を１人１行に展開するために、以下の２つのステップを経ることにします。言葉で説明しても何のことかよく分からないと思うので、とにかく実行していきます。</p>
+<p><br> 1. 「\n」を区切りに複数の研究分担者を分割（「\n」を含まない値はそのまま）<br> 2. 分割された値がそれぞれ１行となるように縦に展開（残りの列は全てコピー）</p>
+<p><br></p>
+<div id="研究分担者の分割" class="section level3">
+<h3>３.１. 研究分担者の分割<br></h3>
+<p>文字列の分割にはstringrパッケージのstr_split関数を用います。以下のコードでは「研究分担者」列の値を分割し、「研究分担者２」列に格納しています。なお、結果については擬似的なデータを用いた結果を表示しています。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d &lt;-<span class="st"> </span>d <span class="op">%&gt;%</span>
+<span class="st">  </span>
+<span class="st">  </span><span class="co"># 研究代表者と研究分担者の列のみ抽出</span>
+<span class="st">  </span><span class="kw">select</span>(研究代表者, 研究分担者) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+<span class="st">  </span><span class="co"># 研究分担者が含まれる行のみ抽出</span>
+<span class="st">  </span><span class="kw">filter</span>(研究分担者 <span class="op">!=</span><span class="st"> &quot;&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+<span class="st">  </span><span class="co"># 「\\n」を区切りに研究分担者の値を分割し、研究分担者２列に格納</span>
+<span class="st">  </span><span class="kw">mutate</span>(研究分担者２ =<span class="st"> </span><span class="kw">str_split</span>(研究分担者, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>))
+
+<span class="co"># 研究分担者２列の最初の５行のみを表示</span>
+d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(研究代表者, 研究分担者, 研究分担者２) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>()</code></pre></div>
+<div id="htmlwidget-341f018e7eb3017167f7" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-341f018e7eb3017167f7">{"x":{"filter":"none","data":[["A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)","B山 B太 BB大学, BB学部, 教授 (XXXXXXXX)"],["C山 C介 CC大学, CC学部, 助教 (XXXXXXXX)\\nD本 D子 DD大学, DD研究所, 准教授 (XXXXXXXX)","E川 E江 EE大学, EE学部, 助教 (XXXXXXXX)\\nF沢 F郎 FF大学, FF研究所, 教授 (XXXXXXXX)"],[["C山 C介 CC大学, CC学部, 助教 (XXXXXXXX)","D本 D子 DD大学, DD研究所, 准教授 (XXXXXXXX)"],["E川 E江 EE大学, EE学部, 助教 (XXXXXXXX)","F沢 F郎 FF大学, FF研究所, 教授 (XXXXXXXX)"]]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>研究代表者<\/th>\n      <th>研究分担者<\/th>\n      <th>研究分担者２<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>上の表を見ても研究分担者列と研究分担者２列に違いはないように見えますが、その中身は大きく異なっています。<br></p>
+<p>以下のコードは研究分担者２列だけ取り出して中身を確認しています。結果の[[1]]や[[2]]は行番号と対応しており、研究分担者が分割されて格納されていることがわかると思います。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span>.<span class="op">$</span>研究分担者２ <span class="op">%&gt;%</span><span class="st">    </span><span class="co"># 研究分担者２列の取り出し</span>
+<span class="st">  </span><span class="kw">head</span>()                <span class="co"># 最初の５つの値のみ取り出し（※以下の擬似的な結果では２つだけ）</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;C山 C介 CC大学, CC学部, 教授 (XXXXXXXX)&quot;    
+## [2] &quot;D本 D子 DD大学, DD研究所, 准教授 (XXXXXXXX)&quot;
+## 
+## [[2]]
+## [1] &quot;E川 E江 EE大学, EE学部, 助教 (XXXXXXXX)&quot;  
+## [2] &quot;F沢 F郎 FF大学, FF研究所, 教授 (XXXXXXXX)&quot;</code></pre>
+<p><br></p>
+</div>
+<div id="入れ子構造の解除" class="section level3">
+<h3>３.２. 入れ子構造の解除</h3>
+<p>上記の通り、研究分担者２列は、それぞれの値の中に更に値が格納されているという入れ子構造をなしています。この入れ子構造を解除することによって、研究分担者の列を縦方向に展開することができます。</p>
+<p>この処理を行ってくれるのがtidyrパッケージのunnest関数です（逆に入れ子構造を作る場合にはnest関数）。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d &lt;-<span class="st"> </span>d <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select</span>(研究代表者, 研究分担者) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(研究分担者 <span class="op">!=</span><span class="st"> &quot;&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(研究分担者２ =<span class="st"> </span><span class="kw">str_split</span>(研究分担者, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+<span class="st">  </span><span class="co"># 入れ子構造を解除  </span>
+<span class="st">  </span><span class="kw">unnest</span>()
+
+<span class="co"># 研究分担者２列の最初の５行のみを表示</span>
+d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(研究代表者, 研究分担者, 研究分担者２) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>()</code></pre></div>
+<div id="htmlwidget-63c136dabe9455e06168" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-63c136dabe9455e06168">{"x":{"filter":"none","data":[["A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)","A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)","B山 B太 BB大学, BB学部, 教授 (XXXXXXXX)","B山 B太 BB大学, BB学部, 教授 (XXXXXXXX)"],["C山 C介 CC大学, CC学部, 教授 (XXXXXXXX)\\nD本 D子 DD大学, DD研究所, 准教授 (XXXXXXXX)","C山 C介 CC大学, CC学部, 教授 (XXXXXXXX)\\nD本 D子 DD大学, DD研究所, 准教授 (XXXXXXXX)","E川 E江 EE大学, EE学部, 助教 (XXXXXXXX)\\nF沢 F郎 FF大学, FF究所, 教授 (XXXXXXXX)","E川 E江 EE大学, EE学部, 助教 (XXXXXXXX)\\nF沢 F郎 FF大学, FF究所, 教授 (XXXXXXXX)"],["C山 C介 CC大学, CC学部, 教授 (XXXXXXXX)","D本 D子 DD大学, DD研究所, 准教授 (XXXXXXXX)","E川 E江 EE大学, EE学部, 助教 (XXXXXXXX)","F沢 F郎 FF大学, FF究所, 教授 (XXXXXXXX)"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>研究代表者<\/th>\n      <th>研究分担者<\/th>\n      <th>研究分担者２<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>今回は生の処理結果をお見せできなかったので分かりづらかったと思うのですが、是非、ご自分のPCで試してみてください。</p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

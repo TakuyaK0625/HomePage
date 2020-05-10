@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>「研究代表者」列から情報抽出</title>
+
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.12.1/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Takuya Kubo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="works.html">
+    <span class="fa fa-files-o"></span>
+     
+    Works
+  </a>
+</li>
+<li>
+  <a href="tools.html">
+    <span class="fa fa-toolbox"></span>
+     
+    Tools
+  </a>
+</li>
+<li>
+  <a href="r-tutorial.html">
+    <span class="fa fa-file-code"></span>
+     
+    R Tutorial
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/TakuyaK0625">
+    <span class="fa fa-github"></span>
+     
+    
+  </a>
+</li>
+<li>
+  <a href="https://twitter.com/Takuyak0625">
+    <span class="fa fa-twitter"></span>
+     
+    
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p><br></p>
+<div id="kaken研究代表者列から情報抽出" class="section level2">
+<h2><strong>【KAKEN】「研究代表者」列から情報抽出</strong></h2>
+<hr />
+<p align="right">
+<em>Takuya Kubo, 2020/05/10</em>
+</p>
+<p><br></p>
+<div id="はじめに" class="section level3">
+<h3><strong>０. はじめに</strong></h3>
+<p>このページはKAKENHIデータベースからダウンロードできるCSVファイルの「研究代表者」列から以下の情報を抽出する方法を紹介していきます。研究代表者列には研究代表者の氏名、職名、所属部局、所属大学、研究者番号が格納されていますが、</p>
+<div class = "panel panel-default">
+<div class="panel-heading">
+<b>GOAL</b>
+</div>
+<div class="panel-body">
+<ul>
+<li>研究者番号の取得</li>
+<li>職名の取得</li>
+<li>所属部局の取得
+</div></li>
+</ul>
+</div>
+<p><br></p>
+</div>
+<div id="下準備" class="section level3">
+<h3><strong>１. 下準備</strong></h3>
+<p>必要なパッケージとデータは以下の通りです。今回は2019年度の全採択課題を用います（kaken_2019_20191201.csv）。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># パッケージの読み込み</span>
+<span class="kw">library</span>(data.table)   <span class="co"># 高速なデータインポートのため</span>
+<span class="kw">library</span>(dplyr)        <span class="co"># データの整理のため</span>
+<span class="kw">library</span>(DT)           <span class="co"># 集計表の出力のため</span>
+<span class="kw">library</span>(stringr)      <span class="co"># 文字列操作のため</span>
+
+<span class="co"># インストールされていない場合は、以下のコマンドの「#」を外して実行</span>
+<span class="co"># install.packages(&quot;data.table&quot;)</span>
+<span class="co"># install.packages(&quot;dplyr&quot;)</span>
+<span class="co"># install.packages(&quot;DT&quot;)</span>
+<span class="co"># install.packages(&quot;stringr&quot;)</span>
+
+
+<span class="co"># 使用するデータのインポート</span>
+d &lt;-<span class="st"> </span><span class="kw">fread</span>(<span class="st">&quot;kaken_2019_20191201.csv&quot;</span>)</code></pre></div>
+<p><br></p>
+</div>
+<div id="パターンの確認" class="section level3">
+<h3><strong>２. パターンの確認</strong></h3>
+<p>まず、研究代表者列に入っているデータのパターンを確認しておきます。個人情報満載なのでサイト上ではコードを実行しませんが、概ね、以下のようなパターンでデータが格納されているのではないかと思われます。</p>
+<p><br> 「苗字 名前 所属機関, 所属部局, 職名 (研究者番号)」</p>
+<p><br></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="st">&quot;研究代表者&quot;</span>)  <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">datatable</span>()</code></pre></div>
+<p><br></p>
+</div>
+<div id="研究者番号の抽出" class="section level3">
+<h3><strong>３. 研究者番号の抽出</strong></h3>
+<p>研究者番号のパターンは「数字８桁」であり、これを正規表現で表すと「\\d{8}」になります。以下のコードではstr_extract関数により、研究代表者列からこのパターンを抽出しています。なお、研究者番号保有者に限定するため、研究種目から「奨励研究」を除外し、また、研究代表者列が空白でないデータのみを対象にしています。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span>
+<span class="st">  </span><span class="co"># 奨励研究を削除</span>
+<span class="st">  </span><span class="kw">filter</span>(研究種目 <span class="op">==</span><span class="st"> &quot;奨励研究&quot;</span>) <span class="op">%&gt;%</span><span class="st">  </span>
+<span class="st">  </span>
+<span class="st">  </span><span class="co"># 研究代表者の列のみ抽出</span>
+<span class="st">  </span><span class="kw">select</span>(研究代表者) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+<span class="st">  </span><span class="co"># 研究代表者が空白でない行だけ抽出</span>
+<span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span>(研究代表者 <span class="op">==</span><span class="st"> &quot;&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+<span class="st">  </span><span class="co"># 研究代表者列から8桁の数字を抽出し、Res.ID列に格納</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Res.ID =</span> <span class="kw">str_extract</span>(研究代表者, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">d{8}&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+<span class="st">  </span><span class="kw">datatable</span>()</code></pre></div>
+<p><br></p>
+</div>
+<div id="職名の抽出" class="section level3">
+<h3><strong>４. 職名の抽出</strong></h3>
+<p>次に、研究者の職名を抽出します。研究代表者列は「苗字 名前 所属機関, 所属部局, 職名 (研究者番号)」の形式でデータが入っているので、「最後のコンマの直後から「(」の直前まで」が職名を表していると考えられます。この部分を一気に取り出すのは難しいので、以下の２段階に分けて職名を抽出します。<br></p>
+<p><br> 1. 最後のコンマの直後から末尾までの文字列を取得<br> 2. 「（研究者番号）」の削除 <br></p>
+<p>なお、１段階目の処理については、全体を「先頭から最後のコンマまで」のパートとそれ以降のパートに分割し、str_replace関数を用いて２つ目のパートで上書きするような処理を行なっています。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(研究種目 <span class="op">!=</span><span class="st"> &quot;奨励研究&quot;</span>) <span class="op">%&gt;%</span><span class="st">  </span>
+<span class="st">  </span><span class="kw">select</span>(研究代表者) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span>(研究代表者 <span class="op">==</span><span class="st"> &quot;&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+<span class="st">  </span><span class="co"># 最後のコンマ直後の文字列から末尾までを取得</span>
+<span class="st">  </span><span class="kw">mutate</span>(職名 =<span class="st"> </span><span class="kw">str_replace</span>(研究代表者, <span class="st">&quot;(^.+,)(.+$)&quot;</span>, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">2&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+<span class="st">  </span><span class="co"># 「(研究者番号)」の削除</span>
+<span class="st">  </span><span class="kw">mutate</span>(職名 =<span class="st"> </span><span class="kw">str_replace</span>(職名, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">(</span><span class="ch">\\</span><span class="st">d{8}</span><span class="ch">\\</span><span class="st">)&quot;</span>, <span class="st">&quot;&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+<span class="st">  </span><span class="co"># 前後の空白を削除</span>
+<span class="st">  </span><span class="kw">mutate</span>(職名 =<span class="st"> </span><span class="kw">str_trim</span>(職名, <span class="dt">side =</span> <span class="st">&quot;both&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+<span class="st">  </span><span class="co"># 職名の列のみ選択</span>
+<span class="st">  </span><span class="kw">select</span>(職名) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+　<span class="co"># 可視化</span>
+  <span class="kw">datatable</span>()</code></pre></div>
+<p><br></p>
+</div>
+<div id="所属部局の抽出" class="section level3">
+<h3><strong>５. 所属部局の抽出</strong></h3>
+<p>最後に、所属部局を抽出します。所属部局は２つのコンマに挟まれた部分の文字列が該当し、正規表現を用いると「(?&lt;=,).+(?=,)」となります。以下のコードでは、str_extract関数を用いてこの正規表現にマッチする文字列を抽出しています。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(研究種目 <span class="op">!=</span><span class="st"> &quot;奨励研究&quot;</span>) <span class="op">%&gt;%</span><span class="st">  </span>
+<span class="st">  </span><span class="kw">select</span>(研究代表者) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span>(研究代表者 <span class="op">==</span><span class="st"> &quot;&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+<span class="st">  </span><span class="co"># 「最後のコンマの直後から末尾まで」の文字列を取得</span>
+<span class="st">  </span><span class="kw">mutate</span>(所属部局 =<span class="st"> </span><span class="kw">str_extract</span>(研究代表者, <span class="st">&quot;(?&lt;=,).+(?=,)&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+<span class="st">  </span><span class="co"># 前後の空白を削除</span>
+<span class="st">  </span><span class="kw">mutate</span>(所属部局 =<span class="st"> </span><span class="kw">str_trim</span>(所属部局, <span class="dt">side =</span> <span class="st">&quot;both&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+　<span class="co"># 可視化</span>
+  <span class="kw">datatable</span>()</code></pre></div>
+<p><br></p>
+</div>
+<div id="例外処理" class="section level3">
+<h3><strong>６. 例外処理</strong></h3>
+<p>職名と所属部局の抽出の例では、研究代表者列にはコンマが２つ含まれていることを前提とし、コンマの位置を手掛かりに抽出を行なってきました。この前提は正しかったのでしょうか。以下のコードでは研究代表者列の各値に含まれるコンマの数を取得し、コンマの数ごとに何行のデータがあるのかを集計しています。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(研究種目 <span class="op">!=</span><span class="st"> &quot;奨励研究&quot;</span>) <span class="op">%&gt;%</span><span class="st">  </span>
+<span class="st">  </span><span class="kw">select</span>(研究代表者) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span>(研究代表者 <span class="op">==</span><span class="st"> &quot;&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+<span class="st">  </span><span class="co"># 研究代表者に含まれるコンマの数をN_comma列に格納</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">N_comma =</span> <span class="kw">str_count</span>(研究代表者, <span class="st">&quot;,&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+<span class="st">  </span><span class="co"># コンマの数によってデータのグループ化</span>
+<span class="st">  </span><span class="kw">group_by</span>(N_comma) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+<span class="st">  </span><span class="co"># 各グループの行数を集計</span>
+<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">N =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+　<span class="co"># 可視化</span>
+  <span class="kw">datatable</span>()</code></pre></div>
+<div id="htmlwidget-802b41a89ac6331113ff" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-802b41a89ac6331113ff">{"x":{"filter":"none","data":[["1","2"],[1,2],[3,28932]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>N_comma<\/th>\n      <th>N<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>残念ながら今まで対象としてきたデータにはコンマが１つしかないデータが存在しているようです。これらのデータについては上記で紹介してきた方法は適用できませんので、例外処理を行います。以下のコードは所属部局を取得するコードを改変したものです。あらかじめ研究代表者列に含まれるコンマの数を取得しておき、コンマの数が２の場合は上記の処理を、それ以外の場合は「NA」を格納しています。</p>
+<p><br></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(研究種目 <span class="op">!=</span><span class="st"> &quot;奨励研究&quot;</span>) <span class="op">%&gt;%</span><span class="st">  </span>
+<span class="st">  </span><span class="kw">select</span>(研究代表者) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span>(研究代表者 <span class="op">==</span><span class="st"> &quot;&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+<span class="st">  </span><span class="co"># 研究代表者に含まれるコンマの数をN_comma列に格納</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">N_comma =</span> <span class="kw">str_count</span>(研究代表者, <span class="st">&quot;,&quot;</span>)) <span class="op">%&gt;%</span>
+
+<span class="st">  </span><span class="co"># コンマの数が２つの時には「最後のコンマ直後から末尾まで」の文字列を取得、それ以外は「NA」</span>
+<span class="st">  </span><span class="kw">mutate</span>(所属部局 =<span class="st"> </span><span class="kw">ifelse</span>(N_comma <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="kw">str_extract</span>(研究代表者, <span class="st">&quot;(?&lt;=,).+(?=,)&quot;</span>), <span class="ot">NA</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+<span class="st">  </span><span class="co"># 前後の空白を削除</span>
+<span class="st">  </span><span class="kw">mutate</span>(所属部局 =<span class="st"> </span><span class="kw">str_trim</span>(所属部局, <span class="dt">side =</span> <span class="st">&quot;both&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span>
+　<span class="co"># 可視化</span>
+  <span class="kw">datatable</span>()</code></pre></div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

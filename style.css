@@ -2,9 +2,20 @@
   background-color: #255870;
 }
 
-p { line-height: 2 }
+p { 
+  line-height: 1.7;
+  color: black
+}
 
 h1 {
-  font-size: 50px
-  
+  font-size: 45px;
+}
+
+.tocify .tocify-header .active {
+color: white;
+background-color: #255870;
+}
+
+.r {
+  color: black;
 }
