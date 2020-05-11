@@ -392,22 +392,17 @@ $(document).ready(function () {
 <h2><strong>【KAKEN】「研究代表者」列から情報抽出</strong></h2>
 <hr />
 <p align="right">
-<em>Takuya Kubo, 2020/05/10</em>
+<em>Takuya Kubo, 2020/05/11</em>
 </p>
 <p><br></p>
 <div id="はじめに" class="section level3">
 <h3><strong>０. はじめに</strong></h3>
 <p>このページはKAKENHIデータベースからダウンロードできるCSVファイルの「研究代表者」列を使って、必要な情報を抽出する方法を紹介していきます。研究代表者列には研究代表者の氏名や、職名、所属部局、所属大学、研究者番号が格納されていますが、いずれかの観点で集計したい時には、その情報だけを独立した列に抜き出したくなります。そこで、このページでは研究代表者列から以下の情報を取得する方法を紹介していきます。</p>
-<div class = "panel panel-default">
-<div class="panel-heading">
-<b>GOAL</b>
-</div>
-<div class="panel-body">
+<div style="padding-top: 10px; border: 1px dotted #333333;">
 <ul>
 <li>研究代表者の研究者番号を取得する（例：12345678）</li>
 <li>研究代表者の職名を取得する（教授、准教授、助教、etc.）</li>
-<li>研究代表者の所属部局の取得（教育学部、工学部、etc.）
-</div></li>
+<li>研究代表者の所属部局の取得（教育学部、工学部、etc.）</li>
 </ul>
 </div>
 <p><br></p>
@@ -529,8 +524,8 @@ d &lt;-<span class="st"> </span><span class="kw">fread</span>(<span class="st">&
 <span class="st">  </span>
 　<span class="co"># 可視化</span>
   <span class="kw">datatable</span>()</code></pre></div>
-<div id="htmlwidget-c69fdfedf28bb4772952" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c69fdfedf28bb4772952">{"x":{"filter":"none","data":[["1","2"],[1,2],[3,28932]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>N_comma<\/th>\n      <th>N<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-fdeed55a074a3849ac14" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fdeed55a074a3849ac14">{"x":{"filter":"none","data":[["1","2"],[1,2],[3,28932]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>N_comma<\/th>\n      <th>N<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p>残念ながら今まで対象としてきたデータにはコンマが１つしかないデータが存在しているようです。これらのデータについては上記で紹介してきた方法は適用できませんので、例外処理を行います。以下のコードは所属部局を取得するコードを改変したものです。あらかじめ研究代表者列に含まれるコンマの数を取得しておき、コンマの数が２の場合は上記の処理を、それ以外の場合は「NA」を格納しています。</p>
 <p><br></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d <span class="op">%&gt;%</span><span class="st"> </span>
