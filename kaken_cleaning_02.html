@@ -333,13 +333,6 @@ $(document).ready(function () {
   </a>
 </li>
 <li>
-  <a href="works.html">
-    <span class="fa fa-files-o"></span>
-     
-    Works
-  </a>
-</li>
-<li>
   <a href="tools.html">
     <span class="fa fa-toolbox"></span>
      
@@ -384,19 +377,19 @@ $(document).ready(function () {
 
 <p><br></p>
 <h2 align="center">
-<strong>【KAKEN】CSVファイルのクリーニング（２）</strong>
+<strong>【KAKEN】データのクリーニング（２）</strong>
 </h2>
 <h2 align="center">
 <strong>ー研究代表者列から情報抽出ー</strong>
 </h2>
 <hr />
 <p align="right">
-<em>Takuya Kubo, 2020/05/13</em>
+<em>Takuya Kubo, 2020/05/14</em>
 </p>
 <p><br></p>
 <div id="はじめに" class="section level3">
 <h3><strong>０. はじめに</strong></h3>
-<p>このページでは、主にstringrパッケージを用いて研究代表者列から必要な情報を抽出する方法を紹介していきます。具体的なタスクは以下の通りです。</p>
+<p>このページでは、主にdplyrパッケージとstringrパッケージを用いて研究代表者列から必要な情報を抽出する方法を紹介していきます。具体的なタスクは以下の通りです。</p>
 <div style="padding-top: 10px; border: 1px dotted #333333;">
 <ul>
 <li>研究代表者の研究者番号を取得する（例：12345678）</li>
@@ -408,7 +401,7 @@ $(document).ready(function () {
 </div>
 <div id="下準備" class="section level3">
 <h3><strong>１. 下準備</strong></h3>
-<p>必要なパッケージとデータは以下の通りです。今回は2019年度の全採択課題を用います（kaken_2019_20200428.csv）。</p>
+<p>必要なパッケージとデータは以下の通りです。今回は2019年度の採択課題データを用います（kaken_2019_20200428.csv）。</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># インストールされていない場合は、以下のコマンドの「#」を外して実行</span>
 <span class="co"># install.packages(&quot;data.table&quot;)</span>
 <span class="co"># install.packages(&quot;dplyr&quot;)</span>
@@ -427,7 +420,7 @@ d &lt;-<span class="st"> </span><span class="kw">fread</span>(<span class="st">&
 </div>
 <div id="パターンの確認" class="section level3">
 <h3><strong>２. パターンの確認</strong></h3>
-<p>まず、研究代表者列のデータのパターンを確認しておきます。個人名等を含むため本ページ上でコードは実行しませんが、概ね、以下のようなパターンでデータが格納されているのではないかと思われます。</p>
+<p>まず、研究代表者列のデータのパターンを確認しておきます。個人情報を含むため本ページ上でコードは実行しませんが、概ね、以下のようなパターンでデータが格納されているのではないかと思われます。</p>
 <p><br></p>
 <p>「苗字 名前 所属機関, 所属部局, 職名 (研究者番号)」</p>
 <p><br></p>
@@ -523,8 +516,8 @@ d &lt;-<span class="st"> </span><span class="kw">fread</span>(<span class="st">&
 <span class="st">  </span>
 　<span class="co"># 可視化</span>
   <span class="kw">datatable</span>()</code></pre></div>
-<div id="htmlwidget-fbf06ae0abc37fb6422c" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-fbf06ae0abc37fb6422c">{"x":{"filter":"none","data":[["1","2","3"],[0,1,2],[15,3,29072]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>N_comma<\/th>\n      <th>N<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-3e03037756a22c4bdbb8" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3e03037756a22c4bdbb8">{"x":{"filter":"none","data":[["1","2","3"],[0,1,2],[15,3,29072]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>N_comma<\/th>\n      <th>N<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p>残念ながら今まで対象としてきたデータにはコンマが１つしかないデータが存在しているようです。これらのデータについては上記で紹介してきた方法は適用できませんので、例外処理を行います。以下のコードは所属部局を取得するコードを改変したものです。あらかじめ研究代表者列に含まれるコンマの数を取得しておき、コンマの数が２の場合は上記の処理を、それ以外の場合は「NA」を格納しています。</p>
 <p><br></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d <span class="op">%&gt;%</span><span class="st"> </span>

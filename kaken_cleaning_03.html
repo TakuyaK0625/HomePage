@@ -333,13 +333,6 @@ $(document).ready(function () {
   </a>
 </li>
 <li>
-  <a href="works.html">
-    <span class="fa fa-files-o"></span>
-     
-    Works
-  </a>
-</li>
-<li>
   <a href="tools.html">
     <span class="fa fa-toolbox"></span>
      
@@ -384,25 +377,25 @@ $(document).ready(function () {
 
 <p><br></p>
 <h2 align="center">
-<strong>【KAKEN】CSVファイルのクリーニング（３）</strong>
+<strong>【KAKEN】データのクリーニング（３）</strong>
 </h2>
 <h2 align="center">
 <strong>ー研究分担者列の展開ー</strong>
 </h2>
 <hr />
 <p align="right">
-<em>Takuya Kubo, 2020/05/13</em>
+<em>Takuya Kubo, 2020/05/14</em>
 </p>
 <p><br></p>
 <div id="はじめに" class="section level3">
 <h3><strong>０. はじめに</strong></h3>
-<p>このページでは、研究分担者が複数存在する研究課題に対して、研究分担者が１人１行になるように展開する方法を紹介していきます。主に用いるパッケージはstringrパッケージとtidyrパッケージです。</p>
+<p>このページでは、研究分担者が複数存在する研究課題に対して、研究分担者が１人１行になるように展開する方法を紹介していきます。主に用いるパッケージはdplyrパッケージとstringrパッケージ、tidyrパッケージです。</p>
 <p><br></p>
-<p>具体的には、このようなデータを <div id="htmlwidget-e3b8d0915586aa11bec5" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e3b8d0915586aa11bec5">{"x":{"filter":"none","data":[["A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)"],["B山 B介 BB大学, BB学部, 教授 (XXXXXXXX)\\nC本 C子 CC大学, CC研究所, 准教授 (XXXXXXXX)\\nD川 D作 DD大学, DD学部, 助教 (XXXXXXXX)"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>研究代表者<\/th>\n      <th>研究分担者<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script></p>
+<p>具体的には、このようなデータを <div id="htmlwidget-03f9fd4c689b04b3afb1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-03f9fd4c689b04b3afb1">{"x":{"filter":"none","data":[["A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)"],["B山 B介 BB大学, BB学部, 教授 (XXXXXXXX)\\nC本 C子 CC大学, CC研究所, 准教授 (XXXXXXXX)\\nD川 D作 DD大学, DD学部, 助教 (XXXXXXXX)"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>研究代表者<\/th>\n      <th>研究分担者<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script></p>
 <p><br></p>
-<p>このようにしていきます。 <div id="htmlwidget-6f8225e39e6a120f4235" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6f8225e39e6a120f4235">{"x":{"filter":"none","data":[["A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)","A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)","A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)"],["B山 B介 BB大学, BB学部, 教授 (XXXXXXXX)","C本 C子 CC大学, CC研究所, 准教授 (XXXXXXXX)","D川 D作 DD大学, DD学部, 助教 (XXXXXXXX)"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>研究代表者<\/th>\n      <th>研究分担者<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script></p>
+<p>このようにしていきます。 <div id="htmlwidget-4f09baa6ad1206c6611e" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4f09baa6ad1206c6611e">{"x":{"filter":"none","data":[["A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)","A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)","A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)"],["B山 B介 BB大学, BB学部, 教授 (XXXXXXXX)","C本 C子 CC大学, CC研究所, 准教授 (XXXXXXXX)","D川 D作 DD大学, DD学部, 助教 (XXXXXXXX)"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>研究代表者<\/th>\n      <th>研究分担者<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script></p>
 <p><br></p>
 </div>
 <div id="下準備" class="section level3">
@@ -463,8 +456,8 @@ d &lt;-<span class="st"> </span><span class="kw">fread</span>(<span class="st">&
 d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(研究代表者, 研究分担者, 研究分担者２) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">head</span>() <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">datatable</span>()</code></pre></div>
-<div id="htmlwidget-4c9bd2f73b6654a71531" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4c9bd2f73b6654a71531">{"x":{"filter":"none","data":[["A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)","B山 B太 BB大学, BB学部, 教授 (XXXXXXXX)"],["C山 C介 CC大学, CC学部, 助教 (XXXXXXXX)\\nD本 D子 DD大学, DD研究所, 准教授 (XXXXXXXX)","E川 E江 EE大学, EE学部, 助教 (XXXXXXXX)\\nF沢 F郎 FF大学, FF研究所, 教授 (XXXXXXXX)"],[["C山 C介 CC大学, CC学部, 助教 (XXXXXXXX)","D本 D子 DD大学, DD研究所, 准教授 (XXXXXXXX)"],["E川 E江 EE大学, EE学部, 助教 (XXXXXXXX)","F沢 F郎 FF大学, FF研究所, 教授 (XXXXXXXX)"]]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>研究代表者<\/th>\n      <th>研究分担者<\/th>\n      <th>研究分担者２<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-42fbf38d514566fd202e" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-42fbf38d514566fd202e">{"x":{"filter":"none","data":[["A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)","B山 B太 BB大学, BB学部, 教授 (XXXXXXXX)"],["C山 C介 CC大学, CC学部, 助教 (XXXXXXXX)\\nD本 D子 DD大学, DD研究所, 准教授 (XXXXXXXX)","E川 E江 EE大学, EE学部, 助教 (XXXXXXXX)\\nF沢 F郎 FF大学, FF研究所, 教授 (XXXXXXXX)"],[["C山 C介 CC大学, CC学部, 助教 (XXXXXXXX)","D本 D子 DD大学, DD研究所, 准教授 (XXXXXXXX)"],["E川 E江 EE大学, EE学部, 助教 (XXXXXXXX)","F沢 F郎 FF大学, FF研究所, 教授 (XXXXXXXX)"]]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>研究代表者<\/th>\n      <th>研究分担者<\/th>\n      <th>研究分担者２<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p><br></p>
 <p>上の表を見ても研究分担者列と研究分担者２列に違いはないように見えますが、その中身は大きく異なっています。以下のコードは研究分担者２列だけ取り出して中身を表示したものです。結果の[[1]]や[[2]]は行番号と対応しており、研究分担者が分割されて格納されていることがわかります（擬似データですが…）。</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d <span class="op">%&gt;%</span><span class="st"> </span>
@@ -494,8 +487,8 @@ d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select
 d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(研究代表者, 研究分担者, 研究分担者２) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">head</span>() <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">datatable</span>()</code></pre></div>
-<div id="htmlwidget-dab5dc2811f53165b728" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-dab5dc2811f53165b728">{"x":{"filter":"none","data":[["A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)","A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)","B山 B太 BB大学, BB学部, 教授 (XXXXXXXX)","B山 B太 BB大学, BB学部, 教授 (XXXXXXXX)"],["C山 C介 CC大学, CC学部, 教授 (XXXXXXXX)\\nD本 D子 DD大学, DD研究所, 准教授 (XXXXXXXX)","C山 C介 CC大学, CC学部, 教授 (XXXXXXXX)\\nD本 D子 DD大学, DD研究所, 准教授 (XXXXXXXX)","E川 E江 EE大学, EE学部, 助教 (XXXXXXXX)\\nF沢 F郎 FF大学, FF究所, 教授 (XXXXXXXX)","E川 E江 EE大学, EE学部, 助教 (XXXXXXXX)\\nF沢 F郎 FF大学, FF究所, 教授 (XXXXXXXX)"],["C山 C介 CC大学, CC学部, 教授 (XXXXXXXX)","D本 D子 DD大学, DD研究所, 准教授 (XXXXXXXX)","E川 E江 EE大学, EE学部, 助教 (XXXXXXXX)","F沢 F郎 FF大学, FF究所, 教授 (XXXXXXXX)"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>研究代表者<\/th>\n      <th>研究分担者<\/th>\n      <th>研究分担者２<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-2d00c53944563666c68a" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2d00c53944563666c68a">{"x":{"filter":"none","data":[["A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)","A田 A夫 AA大学, AA学部, 教授 (XXXXXXXX)","B山 B太 BB大学, BB学部, 教授 (XXXXXXXX)","B山 B太 BB大学, BB学部, 教授 (XXXXXXXX)"],["C山 C介 CC大学, CC学部, 教授 (XXXXXXXX)\\nD本 D子 DD大学, DD研究所, 准教授 (XXXXXXXX)","C山 C介 CC大学, CC学部, 教授 (XXXXXXXX)\\nD本 D子 DD大学, DD研究所, 准教授 (XXXXXXXX)","E川 E江 EE大学, EE学部, 助教 (XXXXXXXX)\\nF沢 F郎 FF大学, FF究所, 教授 (XXXXXXXX)","E川 E江 EE大学, EE学部, 助教 (XXXXXXXX)\\nF沢 F郎 FF大学, FF究所, 教授 (XXXXXXXX)"],["C山 C介 CC大学, CC学部, 教授 (XXXXXXXX)","D本 D子 DD大学, DD研究所, 准教授 (XXXXXXXX)","E川 E江 EE大学, EE学部, 助教 (XXXXXXXX)","F沢 F郎 FF大学, FF究所, 教授 (XXXXXXXX)"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>研究代表者<\/th>\n      <th>研究分担者<\/th>\n      <th>研究分担者２<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p><br></p>
 </div>
 </div>
