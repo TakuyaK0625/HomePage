@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>配分額を箱ひげ図で可視化</title>
+
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.12.1/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #0000ff; } /* Keyword */
+code > span.ch { color: #008080; } /* Char */
+code > span.st { color: #008080; } /* String */
+code > span.co { color: #008000; } /* Comment */
+code > span.ot { color: #ff4000; } /* Other */
+code > span.al { color: #ff0000; } /* Alert */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #008000; font-weight: bold; } /* Warning */
+code > span.cn { } /* Constant */
+code > span.sc { color: #008080; } /* SpecialChar */
+code > span.vs { color: #008080; } /* VerbatimString */
+code > span.ss { color: #008080; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { color: #0000ff; } /* ControlFlow */
+code > span.op { } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #ff4000; } /* Preprocessor */
+code > span.do { color: #008000; } /* Documentation */
+code > span.an { color: #008000; } /* Annotation */
+code > span.cv { color: #008000; } /* CommentVar */
+code > span.at { } /* Attribute */
+code > span.in { color: #008000; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Takuya Kubo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="tools.html">
+    <span class="fa fa-toolbox"></span>
+     
+    Tools
+  </a>
+</li>
+<li>
+  <a href="r-tutorial.html">
+    <span class="fa fa-file-code"></span>
+     
+    R Tutorial
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/TakuyaK0625">
+    <span class="fa fa-github"></span>
+     
+    
+  </a>
+</li>
+<li>
+  <a href="https://twitter.com/Takuyak0625">
+    <span class="fa fa-twitter"></span>
+     
+    
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p><br></p>
+<h2 align="center">
+<strong>【KAKEN】データの可視化（２）</strong>
+</h2>
+<h2 align="center">
+<strong>ー配分額と件数を散布図で可視化ー</strong>
+</h2>
+<hr />
+<p align="right">
+<em>Takuya Kubo, 2020/05/15</em>
+</p>
+<p><br></p>
+<div id="はじめに" class="section level3">
+<h3><strong>０. はじめに</strong></h3>
+<p>このページでは、ggplot2パッケージを使って科研費の配分額と採択件数を散布図で可視化する方法を紹介していきます。</p>
+<p><br></p>
+</div>
+<div id="下準備" class="section level3">
+<h3><strong>１. 下準備</strong></h3>
+<p>必要となるパッケージは以下の通りです。今回は2020年度の採択課題データを用います</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># インストールされていない場合は、以下のコマンドの「#」を外して実行</span>
+<span class="co"># install.packages(&quot;data.table&quot;)</span>
+<span class="co"># install.packages(&quot;dplyr&quot;)</span>
+<span class="co"># install.packages(&quot;DT&quot;)</span>
+<span class="co"># install.packages(&quot;ggplot2&quot;)</span>
+
+<span class="co"># パッケージの読み込み</span>
+<span class="kw">library</span>(data.table)   <span class="co"># 高速なデータインポートのため</span>
+<span class="kw">library</span>(dplyr)        <span class="co"># データの整理のため</span>
+<span class="kw">library</span>(DT)           <span class="co"># 集計表の出力のため</span>
+<span class="kw">library</span>(ggplot2)      <span class="co"># グラフ化のため</span>
+
+<span class="co"># 使用するデータのインポート</span>
+d &lt;-<span class="st"> </span><span class="kw">fread</span>(<span class="st">&quot;kaken_2020_20200428.csv&quot;</span>)</code></pre></div>
+<p><br></p>
+</div>
+<div id="データの要約" class="section level3">
+<h3><strong>２. データの要約</strong></h3>
+<p>グラフを描画する前に、研究機関ごとの配分額と採択件数、１課題当たりの平均額を集計します。総配分額列についてはnumeric型に変換しており、研究機関も旧帝大のみに絞っています。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">D &lt;-<span class="st"> </span>d <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(総配分額 =<span class="st"> </span><span class="kw">as.numeric</span>(総配分額)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(研究機関) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarize</span>(配分額 =<span class="st"> </span><span class="kw">sum</span>(総配分額), 採択件数 =<span class="st"> </span><span class="kw">n</span>(), 平均額 =<span class="st"> </span>配分額<span class="op">/</span>採択件数) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(研究機関 <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;北海道大学&quot;</span>,<span class="st">&quot;東北大学&quot;</span>, <span class="st">&quot;東京大学&quot;</span>, <span class="st">&quot;名古屋大学&quot;</span>, <span class="st">&quot;京都大学&quot;</span>, <span class="st">&quot;大阪大学&quot;</span>, <span class="st">&quot;九州大学&quot;</span>))
+
+<span class="kw">datatable</span>(D)</code></pre></div>
+<div id="htmlwidget-2ae8eb773e50436d07bf" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2ae8eb773e50436d07bf">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7"],["京都大学","九州大学","大阪大学","東京大学","東北大学","北海道大学","名古屋大学"],[8609155000,5389980000,6817040000,12439120000,6593670000,4105540000,4849390000],[840,585,796,1189,714,488,530],[10248994.047619,9213641.02564103,8564120.60301507,10461833.4735071,9234831.93277311,8412991.80327869,9149792.45283019]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>研究機関<\/th>\n      <th>配分額<\/th>\n      <th>採択件数<\/th>\n      <th>平均額<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="散布図の描画" class="section level3">
+<h3><strong>３. 散布図の描画</strong></h3>
+<p>まず、最低限の箱ひげ図を描画します。基本的にはggplot関数とaes関数、そして散布図で描画するためのgeom_point関数を使います。最後のtheme_gray関数は、日本語を表示させるために使用しています。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># データセットの指定とx軸に使う列、y軸に使う列を指定（aes関数）</span>
+<span class="kw">ggplot</span>(D, <span class="kw">aes</span>(<span class="dt">x =</span> 採択件数, <span class="dt">y =</span> 配分額)) <span class="op">+</span>
+
+<span class="co"># 散布図を描画</span>
+<span class="kw">geom_point</span>() <span class="op">+</span>
+
+<span class="co"># 日本語が表示できるフォントに変更</span>
+<span class="kw">theme_gray</span>(<span class="dt">base_family =</span> <span class="st">&quot;HiraKakuPro-W3&quot;</span>)</code></pre></div>
+<p><img src="kaken_plot_02_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><br></p>
+<p>このままだと、どの研究機関がどのポイントなのかが分からないため、以下のコードでは、各ポイントの色に研究機関列を指定しています。ポイントを区別するために形（shape）を使う方法もありますが、６種類以下しか対応していないので今回は扱いません。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ポイントの色（color）を研究機関に指定</span>
+<span class="kw">ggplot</span>(D, <span class="kw">aes</span>(<span class="dt">x =</span> 採択件数, <span class="dt">y =</span> 配分額, <span class="dt">color =</span> 研究機関)) <span class="op">+</span>
+<span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="kw">theme_gray</span>(<span class="dt">base_family =</span> <span class="st">&quot;HiraKakuPro-W3&quot;</span>)</code></pre></div>
+<p><img src="kaken_plot_02_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><br></p>
+<p>凡例の並びが美しくないため、配分額の量によって並べ替えを行います。また、そのためにreorder関数を使っているのですが、こうすると凡例のタイトルもコードと対応して「reorder~」となってしまうため、凡例タイトルも修正します。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># 凡例の並べ替え</span>
+<span class="kw">ggplot</span>(D, <span class="kw">aes</span>(<span class="dt">x =</span> 採択件数, <span class="dt">y =</span> 配分額, <span class="dt">color =</span> <span class="kw">reorder</span>(研究機関, <span class="op">-</span>配分額))) <span class="op">+</span>
+<span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="kw">theme_gray</span>(<span class="dt">base_family =</span> <span class="st">&quot;HiraKakuPro-W3&quot;</span>) <span class="op">+</span>
+<span class="st">  </span>
+<span class="co"># 凡例タイトルの変更（colorはaes関数内のcolorと対応）</span>
+<span class="kw">labs</span>(<span class="dt">color =</span> <span class="st">&quot;研究機関&quot;</span>)</code></pre></div>
+<p><img src="kaken_plot_02_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><br></p>
+<p>他にも、ポイントのサイズに列を指定することができます。グラフとしては冗長ですが、１件当たり配分額列をサイズに指定しています。また、こうすることでサイズの凡例も追加されます。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ポイントのサイズを平均額に指定（size）</span>
+<span class="kw">ggplot</span>(D, <span class="kw">aes</span>(<span class="dt">x =</span> 採択件数, <span class="dt">y =</span> 配分額, <span class="dt">color =</span> <span class="kw">reorder</span>(研究機関, <span class="op">-</span>配分額), <span class="dt">size =</span> 平均額)) <span class="op">+</span>
+<span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="kw">theme_gray</span>(<span class="dt">base_family =</span> <span class="st">&quot;HiraKakuPro-W3&quot;</span>) <span class="op">+</span>
+<span class="kw">labs</span>(<span class="dt">color =</span> <span class="st">&quot;研究機関&quot;</span>)</code></pre></div>
+<p><img src="kaken_plot_02_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><br></p>
+<p>最後に、各ポイントを識別するために研究機関の名前を各ポイントの横に書き込むためのコードを紹介いたします。この場合、冗長な凡例は削除しています。また、そのまま研究機関名を書き込むと重なったり、はみ出たりするので、軸の範囲を調節しています。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(D, <span class="kw">aes</span>(<span class="dt">x =</span> 採択件数, <span class="dt">y =</span> 配分額, <span class="dt">color =</span> <span class="kw">reorder</span>(研究機関, <span class="op">-</span>配分額))) <span class="op">+</span>
+<span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="kw">theme_gray</span>(<span class="dt">base_family =</span> <span class="st">&quot;HiraKakuPro-W3&quot;</span>) <span class="op">+</span>
+<span class="kw">labs</span>(<span class="dt">color =</span> <span class="st">&quot;研究機関&quot;</span>) <span class="op">+</span>
+<span class="st">  </span>
+<span class="co"># 研究機関名を書き込む</span>
+<span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> 研究機関), <span class="dt">family =</span> <span class="st">&quot;HiraKakuPro-W3&quot;</span>, <span class="dt">vjust =</span> <span class="fl">1.5</span>, <span class="dt">size =</span> <span class="dv">3</span>) <span class="op">+</span>
+
+<span class="co"># 凡例の削除</span>
+<span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span>
+
+<span class="co"># 軸の範囲を調整</span>
+<span class="kw">xlim</span>(<span class="dv">450</span>, <span class="dv">1200</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylim</span>(<span class="dv">3</span><span class="op">*</span><span class="dv">10</span><span class="op">^</span><span class="dv">9</span>, <span class="dv">13</span><span class="op">*</span><span class="dv">10</span><span class="op">^</span><span class="dv">9</span>)</code></pre></div>
+<p><img src="kaken_plot_02_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><br></p>
+</div>
+<div id="おわりに" class="section level3">
+<h3><strong>４. おわりに</strong></h3>
+<p>これまでみてきたように、散布図ではx軸やy軸だけでなく、色や形、サイズ、テキストによって様々な変数の情報を表現することができます。ただし、あまり情報を盛り込みすぎると人間の理解が及ばなくなりますので、適度な数に留めるのが肝心です。散布図は変数間の関係性を見るのに重宝しますので、これからも作る機会が多いのではないかと思います。今回はあまりデザインについては触れなかったのですが、デザインの変更方法は基本的に他のグラフの時と同様ですので、適宜そちらのページもご参照ください。</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
