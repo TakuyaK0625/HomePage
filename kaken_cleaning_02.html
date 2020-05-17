@@ -384,7 +384,7 @@ $(document).ready(function () {
 </h2>
 <hr />
 <p align="right">
-<em>Takuya Kubo, 2020/05/15</em>
+<em>Takuya Kubo, 2020/05/18</em>
 </p>
 <p><br></p>
 <div id="はじめに" class="section level3">
@@ -401,7 +401,7 @@ $(document).ready(function () {
 </div>
 <div id="下準備" class="section level3">
 <h3><strong>１. 下準備</strong></h3>
-<p>必要なパッケージとデータは以下の通りです。今回は2019年度の採択課題データを用います（kaken_2019_20200428.csv）。</p>
+<p>必要なパッケージとデータは以下の通りです。今回は2019年度の採択課題データを用います（kaken_2019.csv）。</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># インストールされていない場合は、以下のコマンドの「#」を外して実行</span>
 <span class="co"># install.packages(&quot;data.table&quot;)</span>
 <span class="co"># install.packages(&quot;dplyr&quot;)</span>
@@ -415,7 +415,7 @@ $(document).ready(function () {
 <span class="kw">library</span>(stringr)      <span class="co"># 文字列操作のため</span>
 
 <span class="co"># 使用するデータのインポート</span>
-d &lt;-<span class="st"> </span><span class="kw">fread</span>(<span class="st">&quot;kaken_2019_20200428.csv&quot;</span>)</code></pre></div>
+d &lt;-<span class="st"> </span><span class="kw">fread</span>(<span class="st">&quot;kaken_2019.csv&quot;</span>)</code></pre></div>
 <p><br></p>
 </div>
 <div id="パターンの確認" class="section level3">
@@ -516,8 +516,8 @@ d &lt;-<span class="st"> </span><span class="kw">fread</span>(<span class="st">&
 <span class="st">  </span>
 　<span class="co"># 可視化</span>
   <span class="kw">datatable</span>()</code></pre></div>
-<div id="htmlwidget-40ee09c8b298c4aad27b" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-40ee09c8b298c4aad27b">{"x":{"filter":"none","data":[["1","2","3"],[0,1,2],[15,3,29072]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>N_comma<\/th>\n      <th>N<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4a370ecb215fad8e517e" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4a370ecb215fad8e517e">{"x":{"filter":"none","data":[["1","2","3"],[0,1,2],[15,3,29072]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>N_comma<\/th>\n      <th>N<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p>残念ながら今まで対象としてきたデータにはコンマが１つしかないデータが存在しているようです。これらのデータについては上記で紹介してきた方法は適用できませんので、例外処理を行います。以下のコードは所属部局を取得するコードを改変したものです。あらかじめ研究代表者列に含まれるコンマの数を取得しておき、コンマの数が２の場合は上記の処理を、それ以外の場合は「NA」を格納しています。</p>
 <p><br></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d <span class="op">%&gt;%</span><span class="st"> </span>
