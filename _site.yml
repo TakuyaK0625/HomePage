@@ -28,9 +28,8 @@ output:
       collapse: false
     df_print: "tibble"
     css: style.css
-   
-plugins:
-  – jekyll-sitemap
+    plugins:
+      – jekyll-sitemap
   
 output_dir: "docs"
 
