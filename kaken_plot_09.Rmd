@@ -1,0 +1,174 @@
+---
+pagetitle: "全てのグラフを保存する"
+output: 
+  html_document:
+    toc: FALSE
+---
+
+<br>
+
+<h2 align = "center">**【KAKEN】データの可視化（９）**</h2>
+
+<h2 align = "center">**ー条件を変えて繰り返しグラフを保存ー**</h2>
+
+---
+
+<p align = "right">*Takuya Kubo, `r format(Sys.time(), '%Y/%m/%d')`*</p>
+
+### **０. はじめに**
+前回まで、[調（2018）](https://www.ruconsortium.jp/uploaded/life/248_387_misc.pdf)を参考に、各機関の審査区分ごとの配分額をレーダーチャートで可視化する方法を紹介してきました。今回はその続編として、描画した各機関のレーダーチャートを保存する方法を紹介していきます。なお、１〜４までは最初から処理の流れを追えるように前回のコードをコピーしています。今回のメイントピックであるグラフの保存方法だけで十分という方は５をご覧ください。
+
+<br>
+
+### **１. 環境設定**
+```{r message = F, warning = F}
+# インストールされていない場合は、以下のコマンドの「#」を外して実行
+# install.packages("data.table")
+# install.packages("dplyr")
+# install.packages("DT")
+# install.packages("ggplot2")
+# install.packages("tidyr")
+# install.packages("purrr")
+
+# パッケージの読み込み
+library(data.table)   # 高速なデータインポートのため
+library(dplyr)        # データの整理のため
+library(DT)           # 集計表の出力のため
+library(stringr)      # 文字列操作のため
+library(ggplot2)      # グラフ化のため      
+library(tidyr)        # データの縦持ち/横持ち変換、データフレームをネストするため
+library(purrr)        # 繰り返し処理のため
+
+# 科研費採択課題データ
+d <- fread("kaken_2020.csv", select = c("研究機関", "研究種目", "審査区分", "総配分額"))
+
+# 科研費審査区分一覧表
+kubun <- fread("kaken_kubun.csv", colClasses = list(character = c("小区分コード", "中区分コード")))
+```
+
+<br>
+
+### **２. レーダーチャートを描画するための前処理**
+```{r message = FALSE}
+# 小区分と中区分の対応表
+to_medium <- kubun %>% 
+  select(小区分コード, 中区分コード) %>% 
+  unique()
+
+D1 <- d %>% 
+  
+  # データのフィルター
+  filter(研究種目 %in% c("基盤研究(A)", "基盤研究(B)", "基盤研究(C)", "若手研究")) %>%
+  
+  # 小区分⇨中区分変換
+  mutate(小区分コード = str_extract(審査区分, "\\d{5}")) %>%
+  left_join(to_medium) %>%
+  mutate(中区分コード = ifelse(研究種目 == "基盤研究(A)", str_extract(審査区分, "\\d+"), 中区分コード)) %>%
+
+  # 配分額と採択件数を集計し、常用対数変換＋正規化
+  group_by(研究機関, 中区分コード) %>%
+  summarize(配分額 = sum(総配分額), 件数 = n()) %>%
+  group_by(中区分コード) %>%
+  mutate(配分額_対数 = round(log10(配分額)-max(log10(配分額)-4), 2)) %>%
+  mutate(件数_対数 = round(log10(件数)-max(log10(件数)-4), 2)) %>%
+  select(-配分額, -件数) %>%
+  
+  # 全ての中区分コードに対して、該当する値がない場合に0を代入
+  pivot_longer(cols = -c(研究機関, 中区分コード), names_to = "指標", values_to = "値") %>%
+  pivot_wider(id_cols = c(研究機関, 指標), names_from = 中区分コード, values_from = 値, values_fill = list(値 = 0)) %>%
+  pivot_longer(cols = -c(研究機関, 指標) , names_to = "中区分コード", values_to = "値") %>%
+  
+  # 研究機関の限定
+  filter(研究機関 %in% c("北海道大学", "東北大学", "東京大学", "名古屋大学", "京都大学", "大阪大学", "九州大学")) %>%
+
+  # 中区分コードの因子レベルを変更
+  mutate(中区分コード = factor(中区分コード, levels = c(1:64, 90))) %>%
+  
+  # 研究機関ごとにデータをネスト
+  nest(data = -研究機関) 
+
+D1
+```
+
+<br>
+
+### **３. レーダーチャートを繰り返し描画するための関数**
+```{r}
+my_radar <- function(data, title){
+    data %>%
+        arrange(中区分コード) %>%
+        ggplot(aes(x = 中区分コード, y = 値, group = 指標)) +
+        geom_polygon(aes(color = 指標, fill = 指標), alpha = 0.1) +
+        geom_point(aes(color = 指標), size = 1) +
+        theme_bw(base_family = "HiraKakuPro-W3") +
+        theme(axis.ticks = element_blank(),          
+              axis.text.y = element_blank(),         
+              axis.text.x = element_text(size = 8),  
+              panel.border = element_blank(),
+              plot.title = element_text(size = 15, hjust = 0.5)) +
+        ylim(0,4) + xlab("") + ylab("") +
+        annotate("text", 
+                 x = 0.5, y = c(1, 2, 3, 4), 
+                 label = c("1", "2", "3", "4"),
+                 color = "gray", size = 5) +
+        coord_polar() +
+        ggtitle(title)
+}
+```
+
+<br>
+
+### **４. 各機関のレーダーチャートを繰り返し描画**
+```{r}
+D2 <- D1 %>%
+  mutate(radarchart = map2(D1$data, D1$研究機関, my_radar))
+D2
+```
+
+<br>
+
+### **５. グラフを保存する**
+
+<br>
+
+#### **５.１. １つのグラフを保存する**
+まず、１つのグラフを保存する方法から見ていきます。グラフを保存する方法は色々ありますが、今回はggplot2パッケージのggsave関数を使う方法を紹介いたします。ggsave関数は以下の通りファイル名や書き出すグラフ、画像タイプ、解像度やサイズ等を指定することができます。deviceについてはpngとしていますが、他にもjpegやpdf等を選ぶこともできます。画像の保存先（path）も指定しておくと、作業ディレクトリに画像が煽れないので便利です。以下のコードで保存される画像は[こちら](京都大学.png)をご覧ください。
+
+```{r eval = FALSE}
+ggsave("京都大学.png",      # ファイル名
+       D2$radarchart[[1]],  # 保存したいグラフ
+       device = "png",      # 画像タイプ
+       path = "image",      # ファイルを保存するフォルダ名
+       dpi = 150,           # 解像度
+       width = 6.4,         # 横幅
+       height = 6.4,        # 縦幅
+       units = "in")        # 縦幅、横幅の単位（例：インチ）
+```
+
+<br>
+
+#### **５.２. 複数のグラフをまとめて保存する**
+次に、複数のグラフをまとめて保存する方法を紹介いたします。レーダーチャートを描画した時と同じく、今回もpurrrパッケージのmap系関数による繰り返し処理によりグラフを保存していきます。ファイル名とレーダーチャートの２つを研究機関ごとに変えて処理を繰り返したいので、今回もmap2関数を使います。
+
+前回はあらかじめ繰り返し適用する関数を定義しましたが、今回はggsave関数だけなので直接map2関数の中で記述していきます。関数は「function(x, y, ...){処理内容}」という形式ですが、map系の関数の中では「function(x, y, ...)」を「~」で代用することができます。また、その際には処理内容の中で第1引数に対応する部分を「.x」、第2引数に対応する部分を「.y」と明記します。こうすることで事前に関数を定義しなくてもスッキリしたコードを書くことができます。
+
+```{r message = F, eval = F}
+map2(D2$研究機関,                    # 第1引数（以下の関数の「.x」と対応）
+     
+     D2$radarchart,                  # 第2引数（以下の関数の「.y」と対応）
+     
+     ~{ggsave(paste0(.x, ".png"),    # 「大学名」＋「.png」というファイル名
+              .y, 
+              device = "png", 
+              path = "image",
+              dpi = 150,
+              width = 6.4, 
+              height = 6.4)
+       }
+)
+```
+
+<br>
+
+### **６. おわりに**
+少し短いページになりましたが、今回は描画したグラフを保存する方法を紹介いたしました。調査分析の後にはレポーティングが不可欠ですので、文書やスライドを作成するためにグラフは手元に保存しておきたいものです。注意点としては、グラフを作成する際の文字サイズや画像の解像度、サイズ等を調整しないと、かなり大きなサイズの画像になってしまいます。この点については描こうとするグラフにもよりますので、色々と試行錯誤することになるのではないかと思います。しかし、定型化できれば後は使い回すことができますので、根気強く取り組んでみてください。
