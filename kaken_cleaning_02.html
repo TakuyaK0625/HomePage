@@ -11,7 +11,7 @@
 
 
 
-<title>研究代表者列から情報抽出</title>
+<title>【KAKEN】研究代表者列から情報抽出</title>
 
 <script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -384,7 +384,7 @@ $(document).ready(function () {
 </h2>
 <hr />
 <p align="right">
-<em>Takuya Kubo, 2020/05/20</em>
+<em>Takuya Kubo, 2020/05/21</em>
 </p>
 <p><br></p>
 <div id="はじめに" class="section level3">
@@ -516,8 +516,8 @@ d &lt;-<span class="st"> </span><span class="kw">fread</span>(<span class="st">&
 <span class="st">  </span>
 　<span class="co"># 可視化</span>
   <span class="kw">datatable</span>()</code></pre></div>
-<div id="htmlwidget-5a7113d4c3fd00c25c1d" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5a7113d4c3fd00c25c1d">{"x":{"filter":"none","data":[["1","2","3"],[0,1,2],[15,3,29072]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>N_comma<\/th>\n      <th>N<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-fcd5b9052a58c5a6161c" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fcd5b9052a58c5a6161c">{"x":{"filter":"none","data":[["1","2","3"],[0,1,2],[15,3,29072]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>N_comma<\/th>\n      <th>N<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p>残念ながら今まで対象としてきたデータにはコンマが１つしかないデータが存在しているようです。これらのデータについては上記で紹介してきた方法は適用できませんので、例外処理を行います。以下のコードは所属部局を取得するコードを改変したものです。あらかじめ研究代表者列に含まれるコンマの数を取得しておき、コンマの数が２の場合は上記の処理を、それ以外の場合は「NA」を格納しています。</p>
 <p><br></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d <span class="op">%&gt;%</span><span class="st"> </span>

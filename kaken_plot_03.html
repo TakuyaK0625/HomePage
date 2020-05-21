@@ -11,7 +11,7 @@
 
 
 
-<title>配分額を箱ひげ図で可視化</title>
+<title>【KAKEN】配分額を箱ひげ図で可視化</title>
 
 <script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -384,7 +384,7 @@ $(document).ready(function () {
 </h2>
 <hr />
 <p align="right">
-<em>Takuya Kubo, 2020/05/20</em>
+<em>Takuya Kubo, 2020/05/21</em>
 </p>
 <p><br></p>
 <div id="はじめに" class="section level3">
@@ -421,8 +421,8 @@ d &lt;-<span class="st"> </span><span class="kw">fread</span>(<span class="st">&
 <span class="st">  </span><span class="kw">filter</span>(研究機関 <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;北海道大学&quot;</span>,<span class="st">&quot;東北大学&quot;</span>, <span class="st">&quot;東京大学&quot;</span>, <span class="st">&quot;名古屋大学&quot;</span>, <span class="st">&quot;京都大学&quot;</span>, <span class="st">&quot;大阪大学&quot;</span>, <span class="st">&quot;九州大学&quot;</span>))
 
 <span class="kw">datatable</span>(D)</code></pre></div>
-<div id="htmlwidget-eda897b388095f3a0829" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-eda897b388095f3a0829">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7"],["京都大学","九州大学","大阪大学","東京大学","東北大学","北海道大学","名古屋大学"],[8609155000,5389980000,6817040000,12439120000,6593670000,4105540000,4849390000],[840,585,796,1189,714,488,530],[10248994.047619,9213641.02564103,8564120.60301507,10461833.4735071,9234831.93277311,8412991.80327869,9149792.45283019]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>研究機関<\/th>\n      <th>配分額<\/th>\n      <th>採択件数<\/th>\n      <th>平均額<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-2bd68499eff09c528058" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2bd68499eff09c528058">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7"],["京都大学","九州大学","大阪大学","東京大学","東北大学","北海道大学","名古屋大学"],[8609155000,5389980000,6817040000,12439120000,6593670000,4105540000,4849390000],[840,585,796,1189,714,488,530],[10248994.047619,9213641.02564103,8564120.60301507,10461833.4735071,9234831.93277311,8412991.80327869,9149792.45283019]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>研究機関<\/th>\n      <th>配分額<\/th>\n      <th>採択件数<\/th>\n      <th>平均額<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="散布図の描画" class="section level3">
 <h3><strong>３. 散布図の描画</strong></h3>
