@@ -11,8 +11,8 @@ h1 {
   font-size: 45px;
 }
 
-ul {
-  background: #f3fbff;
+li {
+  color: black;
 }
 
 .tocify .tocify-header .active {
