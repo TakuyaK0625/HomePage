@@ -11,6 +11,10 @@ h1 {
   font-size: 45px;
 }
 
+li {
+  color: black;
+}
+
 .tocify .tocify-header .active {
 color: white;
 background-color: #255870;
@@ -19,3 +23,4 @@ background-color: #255870;
 .r {
   color: black;
 }
+
