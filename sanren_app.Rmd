@@ -1,0 +1,14 @@
+---
+title: "SANREN分析アプリ"
+author: "Takuya Kubo"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+## {.col-md-5}
+<p style="font-size:22px; line-height:150%; clear: both">SANREN分析アプリは文部科学省が実施する産学連携等実施状況に関する調査データを用いた分析ツールです。主な機能としては、研究機関別の共同研究、受託研究、URA等の人材の配置状況等を分析・可視化できます。</p>
+<br>
+<h1 align="center" background-color="yellow">ご利用は[こちら](https://takuyak0625.shinyapps.io/Sanren-App/)</h1>
+
+## {.col-md-7}
+![](../img/sanren_app.png){width=100%}

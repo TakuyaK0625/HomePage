@@ -1,0 +1,14 @@
+---
+title: "KAKEN分析アプリ"
+author: "Takuya Kubo"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+## {.col-md-5}  
+<p style="font-size:22px; line-height:150%; clear: both">KAKEN分析アプリは文部科学省科学研究費助成事業（科研費）の採択課題情報を用いた分析ツールです。主な機能としては、研究機関別の採択件数や金額、審査区分別の採択課題の特徴、研究者のネットワーク等を分析・可視化できます。</p>
+<br>
+<h1 align="center" background-color="yellow">ご利用は[こちら](https://takuyak0625.shinyapps.io/KAKEN-App/)</h1>
+
+## {.col-md-7}
+![](../img/kaken_app.png){width=100%}

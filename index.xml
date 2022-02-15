@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TakuyaKubo</title>
+    <link>https://takuyak0625.github.io/Test/</link>
+    <description>Recent content on TakuyaKubo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://takuyak0625.github.io/Test/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KAKEN分析アプリ</title>
+      <link>https://takuyak0625.github.io/Test/kaken_app/</link>
+      <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://takuyak0625.github.io/Test/kaken_app/</guid>
+      <description>   KAKEN分析アプリは文部科学省科学研究費助成事業（科研費）の採択課題情報を用いた分析ツールです。主な機能としては、研究機関別の採択件数や金額、審査区分別の採択課題の特徴、研究者のネットワーク等を分析・可視化できます。 ご利用はこちら     </description>
+    </item>
+    
+    <item>
+      <title>SANREN分析アプリ</title>
+      <link>https://takuyak0625.github.io/Test/sanren_app/</link>
+      <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://takuyak0625.github.io/Test/sanren_app/</guid>
+      <description>   SANREN分析アプリは文部科学省が実施する産学連携等実施状況に関する調査データを用いた分析ツールです。主な機能としては、研究機関別の共同研究、受託研究、URA等の人材の配置状況等を分析・可視化できます。 ご利用はこちら     </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://takuyak0625.github.io/Test/blog/2022/01/23/2020-12-02-r-rmarkdown/</link>
+      <pubDate>Sun, 23 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://takuyak0625.github.io/Test/blog/2022/01/23/2020-12-02-r-rmarkdown/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(iris) ## Sepal.Length Sepal.Width Petal.Length Petal.Width ## Min. :4.300 Min. :2.000 Min. :1.000 Min. :0.100 ## 1st Qu.:5.100 1st Qu.:2.800 1st Qu.:1.600 1st Qu.:0.300 ## Median :5.800 Median :3.</description>
+    </item>
+    
+    <item>
+      <title>Categories Post</title>
+      <link>https://takuyak0625.github.io/Test/blog/2021/08/01/categories-post/</link>
+      <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
+      
+      <guid>https://takuyak0625.github.io/Test/blog/2021/08/01/categories-post/</guid>
+      <description>I&amp;rsquo;m a post with multiple categories in the frontmatter:
+categories = [&amp;quot;programming&amp;quot;,&amp;quot;lorem&amp;quot;,&amp;quot;pseudo&amp;quot;]  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mauris nulla, vestibulum vel auctor sed, posuere eu lorem. Aliquam consequat augue ut accumsan mollis. Suspendisse malesuada sodales tincidunt. Vivamus sed erat ac augue bibendum porta sed id ipsum. Ut mollis mauris eget ligula sagittis cursus. Aliquam id pharetra tellus. Pellentesque sed tempus risus. Proin id hendrerit ante. Vestibulum vitae urna ut mauris ultricies dignissim.</description>
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>https://takuyak0625.github.io/Test/blog/2020/12/01/2020-12-01-r-rmarkdown/</link>
+      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
+      
+      <guid>https://takuyak0625.github.io/Test/blog/2020/12/01/2020-12-01-r-rmarkdown/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.</description>
+    </item>
+    
+    <item>
+      <title>Linked post</title>
+      <link>https://takuyak0625.github.io/Test/blog/2015/10/02/linked-post/</link>
+      <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
+      
+      <guid>https://takuyak0625.github.io/Test/blog/2015/10/02/linked-post/</guid>
+      <description>I&amp;rsquo;m a linked post in the menu. You can add other posts by adding the following line to the frontmatter:
+menu = &amp;quot;main&amp;quot;  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mauris nulla, vestibulum vel auctor sed, posuere eu lorem. Aliquam consequat augue ut accumsan mollis. Suspendisse malesuada sodales tincidunt. Vivamus sed erat ac augue bibendum porta sed id ipsum. Ut mollis mauris eget ligula sagittis cursus. Aliquam id pharetra tellus.</description>
+    </item>
+    
+    <item>
+      <title>Go is for lovers</title>
+      <link>https://takuyak0625.github.io/Test/blog/2015/09/17/go-is-for-lovers/</link>
+      <pubDate>Thu, 17 Sep 2015 13:47:08 +0200</pubDate>
+      
+      <guid>https://takuyak0625.github.io/Test/blog/2015/09/17/go-is-for-lovers/</guid>
+      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
+This document is a brief primer on using go templates.</description>
+    </item>
+    
+    <item>
+      <title>Hugo is for lovers</title>
+      <link>https://takuyak0625.github.io/Test/blog/2015/08/03/hugo-is-for-lovers/</link>
+      <pubDate>Mon, 03 Aug 2015 13:39:46 +0200</pubDate>
+      
+      <guid>https://takuyak0625.github.io/Test/blog/2015/08/03/hugo-is-for-lovers/</guid>
+      <description>This is the summary Goto &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;hugo releases&lt;/a&gt; and download the appropriate version for your os and architecture. Save it somewhere specific as we will be using it in the next step. More complete instructions are available at &lt;a href=&#34;https://takuyak0625.github.io/Test/overview/installing/&#34;&gt;installing hugo&lt;/a&gt;</description>
+    </item>
+    
+    <item>
+      <title>Creating a new theme</title>
+      <link>https://takuyak0625.github.io/Test/blog/2015/06/24/creating-a-new-theme/</link>
+      <pubDate>Wed, 24 Jun 2015 13:50:46 +0200</pubDate>
+      
+      <guid>https://takuyak0625.github.io/Test/blog/2015/06/24/creating-a-new-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://takuyak0625.github.io/Test/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://takuyak0625.github.io/Test/contact/</guid>
+      <description>We are here to help you Are you curious about something? Do you have some kind of problem with our products? As am hastily invited settled at limited civilly fortune me. Really spring in extent an by. Judge but built gay party world. Of so am he remember although required. Bachelor unpacked be advanced at. Confined in declared marianne is vicinity.
+Please feel free to contact us, our customer service center is working for you 24/7.</description>
+    </item>
+    
+    <item>
+      <title>FAQ</title>
+      <link>https://takuyak0625.github.io/Test/faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://takuyak0625.github.io/Test/faq/</guid>
+      <description>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+1. WHAT TO DO IF I HAVE STILL NOT RECEIVED THE ORDER? Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</description>
+    </item>
+    
+    <item>
+      <title>Migrate from Jekyll</title>
+      <link>https://takuyak0625.github.io/Test/blog/1/01/01/migrate-from-jekyll/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://takuyak0625.github.io/Test/blog/1/01/01/migrate-from-jekyll/</guid>
+      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
+▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
+▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+    </item>
+    
+    <item>
+      <title>Profile</title>
+      <link>https://takuyak0625.github.io/Test/profile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://takuyak0625.github.io/Test/profile/</guid>
+      <description>   1. 職歴 2021年8月 横浜国立大学 研究推進機構 特任教員（講師）/ URA（現職）
+2019年4月 信州大学 学術研究・産学官連携推進機構 助教（URA）（2021年7月迄）
+2016年5月 広島大学 学術室研究企画室 URA（2019年3月迄）
+2013年4月 日本学術振興会 特別研究員（DC2）（2015年3月迄）
+ 2. 学歴 2016年3月 広島大学大学院教育学研究科 修了（博士）
+2012年3月 広島大学大学院教育学研究科 修了（修士）
+2009年3月 広島大学教育学部 卒業
+2005年3月 熊本県立熊本高等学校 卒業
+ ３. その他 Data Science Specialization（Coursera, Johns Hopkins University）
+第5期 PM育成・活躍推進プログラム修了（JST）
+知的財産管理技能検定３級（一般社団法人知的財産教育協会）
+多変量解析実務講座 修了（一般財団法人実務教育研究所）
+現代統計実務講座 修了（一般財団法人実務教育研究所）
+   氏名：久保 琢也 博士（学術）
+出身：熊本県熊本市
+趣味：動物園散策
+Mail：kubo-takuya-xv[AT]ynu.ac.jp
+  </description>
+    </item>
+    
+    <item>
+      <title>Works</title>
+      <link>https://takuyak0625.github.io/Test/works/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://takuyak0625.github.io/Test/works/</guid>
+      <description>1. 論文  久保琢也, 平井克之 (2021)「研究IRにおける科研費分析の効率化を目指したWebアプリケーションの開発」『大学評価とIR』13, 3-12. 久保琢也, 伊藤広幸 (2021)「J-STAGEを活用した日本の学術論文データの整備」『大学評価とIR』12, 26-35. 平井克之, 岡崎麻紀子, 奥津佐恵子, 久保琢也, 矢吹命大, 渡邉優香 (2021)「研究力分析の効率化・高度化に関する Code for Research Administration の取組み:URAによる機関を越えた連携」『情報の科学と技術』 久保琢也 (2020)「大学図書館における人文社会系の専門書の所蔵状況 ―CiNii BooksとopenBDを用いた予備的調査―」 『第９回大学情報・機関調査研究集会 論文集』 久保琢也, 伊藤広幸 (2020)「基盤研究 (A) にステップアップした研究者の科研費採択履歴の特徴」『大学評価とIR』11, 15-24. 久保琢也 (2016)『OS語順の産出における普遍性と言語個別性 : カクチケル語VOS語順における検討』広島大学学位論文 久保琢也, 小野創, 田中幹大, 小泉政利, 酒井弘 (2015) 「カクチケル語VOS語順の産出メカニズム−有生性の効果を通して−」『認知科学』22(4), 591-603. 久保琢也 (2014)「カクチケル語における語順の選択に影響を与える要因−談話的卓立性を手がかりとして−」 『広島大学教育学研究科紀要』2(63) 久保琢也 (2013)「名詞句の類似性が語順の選択に与える影響−カクチケル語における検討−」『電子情報通信学会技 術研究報告』113, 63-68.
+ 久保琢也 (2011)「VOS言語において有生性が語順に与える影響−カクチケル語における線画描写課題での検討−」『電子情報通信学会技 術研究報告』111, 19-24.   2. 発表  久保琢也, Hansen Marc, 平井克之, 間宮るい (2021)「機関を超えたURAによる産学連携等実施状況を分析するためのWebアプリケーションの開発」 第７回リサーチアドミニストレーター協議会 年次大会</description>
+    </item>
+    
+  </channel>
+</rss>

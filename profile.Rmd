@@ -1,0 +1,39 @@
+---
+title: "Profile"
+author: "Takuya Kubo"
+date: "`r Sys.Date()"
+output: html_document
+---
+
+## {.col-md-8}
+
+### 1. 職歴
+<font size="4">2021年8月 横浜国立大学 研究推進機構 特任教員（講師）/ URA（現職）</font>  
+<font size="4">2019年4月 信州大学 学術研究・産学官連携推進機構 助教（URA）（2021年7月迄）</font>  
+<font size="4">2016年5月 広島大学 学術室研究企画室 URA（2019年3月迄）</font>  
+<font size="4">2013年4月 日本学術振興会 特別研究員（DC2）（2015年3月迄）</font>  
+
+
+### 2. 学歴  
+<font size="4">2016年3月 広島大学大学院教育学研究科 修了（博士）</font>  
+<font size="4">2012年3月 広島大学大学院教育学研究科 修了（修士）</font>  
+<font size="4">2009年3月 広島大学教育学部 卒業</font>   
+<font size="4">2005年3月 熊本県立熊本高等学校 卒業</font>
+
+### ３. その他  
+<font size="4">Data Science Specialization（Coursera, Johns Hopkins University）</font>  
+<font size="4">第5期 PM育成・活躍推進プログラム修了（JST）</font>  
+<font size="4">知的財産管理技能検定３級（一般社団法人知的財産教育協会）</font>  
+<font size="4">多変量解析実務講座 修了（一般財団法人実務教育研究所）</font>  
+<font size="4">現代統計実務講座 修了（一般財団法人実務教育研究所）</font>  
+
+## {.col-md-4}
+<br>
+![](../img/prof.png){width=70%}  
+<br>
+<font size ="4">氏名：久保 琢也 博士（学術）</font>  
+<font size ="4">出身：熊本県熊本市</font>  
+<font size ="4">趣味：動物園散策</font>  
+<font size ="4">Mail：kubo-takuya-xv[AT]ynu.ac.jp</font>  
+</div>
+
