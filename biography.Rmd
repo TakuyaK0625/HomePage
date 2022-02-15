@@ -1,0 +1,31 @@
+---
+title: "Biography"
+author: "Takuya Kubo"
+date: "1/23/2022"
+output: html_document
+fontsize: 24pt
+---
+
+## 1. 職歴
+<font size="5">2021年8月 横浜国立大学・研究推進機構 特任教員（講師）（現職）</font>  
+<font size="5">2019年4月 信州大学学術研究・産学官連携推進機構 助教（2021年7月迄）</font>  
+<font size="5">2016年5月 広島大学学術室研究企画室 URA（2019年3月迄）</font>  
+<font size="5">2013年4月 日本学術振興会特別研究員（DC2）（2015年3月迄）</font>  
+
+
+## 2. 学歴  
+<font size="5">2016年3月 広島大学大学院教育学研究科 修了（博士）</font>  
+<font size="5">2012年3月 広島大学大学院教育学研究科 修了（修士）</font>  
+<font size="5">2009年3月 広島大学教育学部 卒業</font>   
+<font size="5">2005年3月 熊本県立熊本高等学校 卒業</font>   
+
+
+## ３. その他  
+<font size="5">PM育成・活躍推進プログラム 第5期研修生</font>  
+<font size="5">多変量解析実務講座 修了</font>  
+<font size="5">現代統計実務講座 修了</font>  
+
+
+---
+
+> In case you haven't found the answer for your question please feel free to contact us, our customer support will be happy to help you.
