@@ -1,0 +1,14 @@
+---
+title: "WoS論文整理アプリ"
+author: "Takuya Kubo"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+## {.col-md-5}  
+<p style="font-size:22px; line-height:150%; clear: both">WoS論文整理アプリはWeb of Scienceからダウンロードできる論文データを 著者名単位の個票データに整理するとともに、各著者がFirst AuthorやReprint Authorか否か、当該論文が 国際共著論文か否かについて判定します）</p>
+<br>
+<h1 align="center" background-color="yellow">ご利用は[こちら](https://takuyak0625.shinyapps.io/WoS_to_DF/)</h1>
+
+## {.col-md-7}
+![](../img/wos_cleaning.png){width=100%}

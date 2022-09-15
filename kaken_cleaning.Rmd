@@ -1,12 +1,12 @@
 ---
-title: "KAKEN整理アプリ"
+title: "KAKENデータ整理アプリ"
 author: "Takuya Kubo"
 date: "`r Sys.Date()`"
 output: html_document
 ---
 
 ## {.col-md-5}  
-<p style="font-size:22px; line-height:150%; clear: both">KAKEN整理アプリはKAKENからダウンロードしたCSVファイルを研究者個人単位の個表データに変形するツールです。また、元データでは１つの列に格納されていた種々のデータを それぞれ独立した列に分割しています（例：研究代表者⇨研究者氏名、所属機関、職名、研究者番号、等）</p>
+<p style="font-size:22px; line-height:150%; clear: both">KAKENデータ整理アプリはKAKENからダウンロードしたCSVファイルを研究者個人単位の個表データに変形するツールです。また、元データでは１つの列に格納されていた種々のデータを それぞれ独立した列に分割しています（例：研究代表者⇨研究者氏名、所属機関、職名、研究者番号、等）</p>
 <br>
 <h1 align="center" background-color="yellow">ご利用は[こちら](https://takuyak0625.shinyapps.io/KAKEN_to_DF/)</h1>
 
