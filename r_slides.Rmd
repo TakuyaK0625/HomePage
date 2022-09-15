@@ -21,10 +21,8 @@ output: html_document
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/LJBvlMbMtsDXdo" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%; margin-right: 5px; float: left" allowfullscreen> </iframe>
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/8PfifqaNv5kk2c" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%; margin-right: 5px; float: left" allowfullscreen>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/8PfifqaNv5kk2c" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%; margin-right: 5px; float: left" allowfullscreen> </iframe>
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/ApWBOuAASLveZX" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%; margin-right: 5px; float: left" allowfullscreen> </iframe>
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/iX8TELRprjEP7Z" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%; margin-right: 5px; float: left" allowfullscreen> </iframe>
-
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/7b0AGxtGYIk31X" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%; margin-right: 5px; float: left" allowfullscreen> </iframe>
