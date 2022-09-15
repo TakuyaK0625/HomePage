@@ -2,89 +2,89 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on TakuyaKubo</title>
-    <link>https://takuyak0625.github.io/Test/tags/</link>
+    <link>https://takuyak0625.github.io/HomePage/tags/</link>
     <description>Recent content in Tags on TakuyaKubo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Aug 2021 21:29:20 +0200</lastBuildDate><atom:link href="https://takuyak0625.github.io/Test/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Aug 2021 21:29:20 +0200</lastBuildDate><atom:link href="https://takuyak0625.github.io/HomePage/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>golang</title>
-      <link>https://takuyak0625.github.io/Test/tags/golang/</link>
+      <link>https://takuyak0625.github.io/HomePage/tags/golang/</link>
       <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
       
-      <guid>https://takuyak0625.github.io/Test/tags/golang/</guid>
+      <guid>https://takuyak0625.github.io/HomePage/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
-      <link>https://takuyak0625.github.io/Test/tags/hugo/</link>
+      <link>https://takuyak0625.github.io/HomePage/tags/hugo/</link>
       <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
       
-      <guid>https://takuyak0625.github.io/Test/tags/hugo/</guid>
+      <guid>https://takuyak0625.github.io/HomePage/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>programming</title>
-      <link>https://takuyak0625.github.io/Test/tags/programming/</link>
+      <link>https://takuyak0625.github.io/HomePage/tags/programming/</link>
       <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
       
-      <guid>https://takuyak0625.github.io/Test/tags/programming/</guid>
+      <guid>https://takuyak0625.github.io/HomePage/tags/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>theme</title>
-      <link>https://takuyak0625.github.io/Test/tags/theme/</link>
+      <link>https://takuyak0625.github.io/HomePage/tags/theme/</link>
       <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
       
-      <guid>https://takuyak0625.github.io/Test/tags/theme/</guid>
+      <guid>https://takuyak0625.github.io/HomePage/tags/theme/</guid>
       <description></description>
     </item>
     
     <item>
       <title>plot</title>
-      <link>https://takuyak0625.github.io/Test/tags/plot/</link>
+      <link>https://takuyak0625.github.io/HomePage/tags/plot/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
       
-      <guid>https://takuyak0625.github.io/Test/tags/plot/</guid>
+      <guid>https://takuyak0625.github.io/HomePage/tags/plot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R Markdown</title>
-      <link>https://takuyak0625.github.io/Test/tags/r-markdown/</link>
+      <link>https://takuyak0625.github.io/HomePage/tags/r-markdown/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
       
-      <guid>https://takuyak0625.github.io/Test/tags/r-markdown/</guid>
+      <guid>https://takuyak0625.github.io/HomePage/tags/r-markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>regression</title>
-      <link>https://takuyak0625.github.io/Test/tags/regression/</link>
+      <link>https://takuyak0625.github.io/HomePage/tags/regression/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
       
-      <guid>https://takuyak0625.github.io/Test/tags/regression/</guid>
+      <guid>https://takuyak0625.github.io/HomePage/tags/regression/</guid>
       <description></description>
     </item>
     
     <item>
       <title>go</title>
-      <link>https://takuyak0625.github.io/Test/tags/go/</link>
+      <link>https://takuyak0625.github.io/HomePage/tags/go/</link>
       <pubDate>Thu, 17 Sep 2015 13:47:08 +0200</pubDate>
       
-      <guid>https://takuyak0625.github.io/Test/tags/go/</guid>
+      <guid>https://takuyak0625.github.io/HomePage/tags/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ipsum</title>
-      <link>https://takuyak0625.github.io/Test/tags/ipsum/</link>
+      <link>https://takuyak0625.github.io/HomePage/tags/ipsum/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://takuyak0625.github.io/Test/tags/ipsum/</guid>
+      <guid>https://takuyak0625.github.io/HomePage/tags/ipsum/</guid>
       <description></description>
     </item>
     

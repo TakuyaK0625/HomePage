@@ -2,103 +2,103 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://takuyak0625.github.io/Test/kaken_app/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/kaken_app/</loc>
     <lastmod>2022-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/sanren_app/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/sanren_app/</loc>
     <lastmod>2022-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/blog/2022/01/23/2020-12-02-r-rmarkdown/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/blog/2022/01/23/2020-12-02-r-rmarkdown/</loc>
     <lastmod>2022-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/blog/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/blog/</loc>
     <lastmod>2022-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/categories/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/categories/</loc>
     <lastmod>2022-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/categories/r/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/categories/r/</loc>
     <lastmod>2022-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/</loc>
     <lastmod>2022-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/authors/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/authors/</loc>
     <lastmod>2021-08-01T21:29:20+02:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/blog/2021/08/01/categories-post/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/blog/2021/08/01/categories-post/</loc>
     <lastmod>2021-08-01T21:29:20+02:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/tags/golang/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/tags/golang/</loc>
     <lastmod>2021-08-01T21:29:20+02:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/tags/hugo/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/tags/hugo/</loc>
     <lastmod>2021-08-01T21:29:20+02:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/authors/john-doe/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/authors/john-doe/</loc>
     <lastmod>2021-08-01T21:29:20+02:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/categories/lorem/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/categories/lorem/</loc>
     <lastmod>2021-08-01T21:29:20+02:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/tags/programming/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/tags/programming/</loc>
     <lastmod>2021-08-01T21:29:20+02:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/categories/programming/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/categories/programming/</loc>
     <lastmod>2021-08-01T21:29:20+02:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/categories/pseudo/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/categories/pseudo/</loc>
     <lastmod>2021-08-01T21:29:20+02:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/tags/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/tags/</loc>
     <lastmod>2021-08-01T21:29:20+02:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/tags/theme/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/tags/theme/</loc>
     <lastmod>2021-08-01T21:29:20+02:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/blog/2020/12/01/2020-12-01-r-rmarkdown/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/blog/2020/12/01/2020-12-01-r-rmarkdown/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/tags/plot/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/tags/plot/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/tags/r-markdown/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/tags/r-markdown/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/tags/regression/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/tags/regression/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/authors/jane-doe/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/authors/jane-doe/</loc>
     <lastmod>2015-10-02T21:49:20+02:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/blog/2015/10/02/linked-post/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/blog/2015/10/02/linked-post/</loc>
     <lastmod>2015-10-02T21:49:20+02:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/tags/go/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/tags/go/</loc>
     <lastmod>2015-09-17T13:47:08+02:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/blog/2015/09/17/go-is-for-lovers/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/blog/2015/09/17/go-is-for-lovers/</loc>
     <lastmod>2015-09-17T13:47:08+02:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/blog/2015/08/03/hugo-is-for-lovers/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/blog/2015/08/03/hugo-is-for-lovers/</loc>
     <lastmod>2015-08-03T13:39:46+02:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/blog/2015/06/24/creating-a-new-theme/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/blog/2015/06/24/creating-a-new-theme/</loc>
     <lastmod>2015-06-24T13:50:46+02:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/categories/starting/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/categories/starting/</loc>
     <lastmod>2015-06-24T13:50:46+02:00</lastmod>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/contact/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/contact/</loc>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/faq/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/faq/</loc>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/tags/ipsum/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/tags/ipsum/</loc>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/blog/1/01/01/migrate-from-jekyll/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/blog/1/01/01/migrate-from-jekyll/</loc>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/profile/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/profile/</loc>
   </url><url>
-    <loc>https://takuyak0625.github.io/Test/works/</loc>
+    <loc>https://takuyak0625.github.io/HomePage/works/</loc>
   </url>
 </urlset>
