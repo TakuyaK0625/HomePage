@@ -7,7 +7,15 @@ output: html_document
 
 ### R言語勉強会
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/LYaXTC1bWXNpEo" width="344" height="292" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%; margin-right: 5px; float: left" allowfullscreen> </iframe>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/LYaXTC1bWXNpEo" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%; margin-right: 5px; float: left" allowfullscreen> </iframe>
 
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/h8aSfYlwohKxJ9" width="344" height="292" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%; margin-right: 5px; float: left" allowfullscreen> </iframe> 
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/h8aSfYlwohKxJ9" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%; margin-right: 5px; float: left" allowfullscreen> </iframe> 
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/95yx0au4MQISjI" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%; margin-right: 5px; float: left" allowfullscreen> </iframe> 
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/bkFb0KHCKQRuwU" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%; margin-right: 5px; float: left" allowfullscreen> </iframe>
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/LA3qrXDrgqthlc" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%; margin-right: 5px; float: left" allowfullscreen> </iframe>
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/JAY1I3LHgWNutd" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;  margin-right: 5px; float: left" allowfullscreen> </iframe>
