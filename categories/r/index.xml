@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on TakuyaKubo</title>
-    <link>https://takuyak0625.github.io/Test/categories/r/</link>
+    <link>https://takuyak0625.github.io/HomePage/categories/r/</link>
     <description>Recent content in R on TakuyaKubo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://takuyak0625.github.io/Test/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://takuyak0625.github.io/HomePage/categories/r/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://takuyak0625.github.io/Test/blog/2022/01/23/2020-12-02-r-rmarkdown/</link>
+      <link>https://takuyak0625.github.io/HomePage/blog/2022/01/23/2020-12-02-r-rmarkdown/</link>
       <pubDate>Sun, 23 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://takuyak0625.github.io/Test/blog/2022/01/23/2020-12-02-r-rmarkdown/</guid>
+      <guid>https://takuyak0625.github.io/HomePage/blog/2022/01/23/2020-12-02-r-rmarkdown/</guid>
       <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
 summary(iris) ## Sepal.Length Sepal.Width Petal.Length Petal.Width ## Min. :4.300 Min. :2.000 Min. :1.000 Min. :0.100 ## 1st Qu.:5.100 1st Qu.:2.800 1st Qu.:1.600 1st Qu.:0.300 ## Median :5.800 Median :3.</description>
@@ -20,10 +20,10 @@ summary(iris) ## Sepal.Length Sepal.Width Petal.Length Petal.Width ## Min. :4.30
     
     <item>
       <title>Hello R Markdown</title>
-      <link>https://takuyak0625.github.io/Test/blog/2020/12/01/2020-12-01-r-rmarkdown/</link>
+      <link>https://takuyak0625.github.io/HomePage/blog/2020/12/01/2020-12-01-r-rmarkdown/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
       
-      <guid>https://takuyak0625.github.io/Test/blog/2020/12/01/2020-12-01-r-rmarkdown/</guid>
+      <guid>https://takuyak0625.github.io/HomePage/blog/2020/12/01/2020-12-01-r-rmarkdown/</guid>
       <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
 summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.</description>

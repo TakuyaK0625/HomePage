@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on TakuyaKubo</title>
-    <link>https://takuyak0625.github.io/Test/categories/</link>
+    <link>https://takuyak0625.github.io/HomePage/categories/</link>
     <description>Recent content in Categories on TakuyaKubo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://takuyak0625.github.io/Test/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://takuyak0625.github.io/HomePage/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>R</title>
-      <link>https://takuyak0625.github.io/Test/categories/r/</link>
+      <link>https://takuyak0625.github.io/HomePage/categories/r/</link>
       <pubDate>Sun, 23 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://takuyak0625.github.io/Test/categories/r/</guid>
+      <guid>https://takuyak0625.github.io/HomePage/categories/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>lorem</title>
-      <link>https://takuyak0625.github.io/Test/categories/lorem/</link>
+      <link>https://takuyak0625.github.io/HomePage/categories/lorem/</link>
       <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
       
-      <guid>https://takuyak0625.github.io/Test/categories/lorem/</guid>
+      <guid>https://takuyak0625.github.io/HomePage/categories/lorem/</guid>
       <description></description>
     </item>
     
     <item>
       <title>programming</title>
-      <link>https://takuyak0625.github.io/Test/categories/programming/</link>
+      <link>https://takuyak0625.github.io/HomePage/categories/programming/</link>
       <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
       
-      <guid>https://takuyak0625.github.io/Test/categories/programming/</guid>
+      <guid>https://takuyak0625.github.io/HomePage/categories/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pseudo</title>
-      <link>https://takuyak0625.github.io/Test/categories/pseudo/</link>
+      <link>https://takuyak0625.github.io/HomePage/categories/pseudo/</link>
       <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
       
-      <guid>https://takuyak0625.github.io/Test/categories/pseudo/</guid>
+      <guid>https://takuyak0625.github.io/HomePage/categories/pseudo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>starting</title>
-      <link>https://takuyak0625.github.io/Test/categories/starting/</link>
+      <link>https://takuyak0625.github.io/HomePage/categories/starting/</link>
       <pubDate>Wed, 24 Jun 2015 13:50:46 +0200</pubDate>
       
-      <guid>https://takuyak0625.github.io/Test/categories/starting/</guid>
+      <guid>https://takuyak0625.github.io/HomePage/categories/starting/</guid>
       <description></description>
     </item>
     
