@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 340" role="img" aria-labelledby="title desc">
+<title id="title">わが家の家族図</title><desc id="desc">妻と私から、ハチワレ、キジトラ、長女、長男の順につながる家族図。</desc>
+<!-- Dark cap split by a white inverted-V blaze. -->
+<g fill="#393939" stroke="none">
+<path d="M53 222 L53 204 L68 216 Q74 213 79 214 Q72 221 69 233 L55 236 Q52 231 53 222 Z"/>
+<path d="M84 214 Q89 212 92 216 L106 203 L108 223 Q111 230 108 237 L94 233 Q90 221 84 214 Z"/>
+</g>
+<g fill="none" stroke="#393939" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<!-- Parents and four equal branches. -->
+<path d="M272 90 Q310 87 348 91 M272 96 Q310 94 348 97 M311 97 Q309 145 312 177 M79 205 L80 179 Q312 174 560 179 L561 205 M240 178 L241 205 M402 178 L403 205"/>
+<!-- Wife: chin-length bob and glasses. -->
+<path d="M236 36 C215 35 209 60 220 78 Q236 94 252 78 C265 61 258 36 236 36 Z M213 62 Q207 27 235 27 Q264 25 264 59 L266 82 Q260 92 250 86 M213 57 L207 83 Q213 92 224 85 M216 49 Q228 50 236 35 Q242 47 259 50 M209 117 Q212 91 236 92 Q261 92 264 117"/>
+<path d="M219 58 Q227 54 233 58 L233 67 Q226 72 220 67 Z M239 58 Q247 54 254 58 L253 67 Q246 72 240 67 Z M233 60 L239 60 M227 63 l.5 0 M247 63 l.5 0 M228 78 Q236 83 244 77"/>
+<!-- Father: simple short haircut. -->
+<path d="M384 37 C363 36 356 60 368 77 Q383 94 400 78 C414 61 407 38 384 37 Z M360 57 Q359 29 382 29 Q405 27 410 54 M363 47 Q374 46 383 37 Q389 45 407 47 M357 117 Q359 92 384 92 Q410 92 413 117 M375 62 l1 0 M394 62 l1 0 M376 77 Q384 83 393 76"/>
+<!-- Hachiware. -->
+<path d="M52 221 L52 202 L68 214 Q80 209 91 214 L107 201 L109 223 Q116 249 82 252 Q49 251 52 221 Z M72 231 l1 0 M90 231 l1 0 M77 240 L82 243 L87 239 M61 240 L42 236 M61 245 L42 249 M101 240 L119 236 M101 245 L120 249 M65 252 Q60 277 67 280 L101 280 Q109 267 115 263 Q127 257 128 269 Q127 280 109 281"/>
+<g transform="translate(-323 0)"><!-- Tabby. -->
+<path d="M533 222 L534 202 L549 215 Q561 210 573 215 L588 201 L590 223 Q598 250 564 253 Q532 251 533 222 Z M550 215 L555 226 M563 213 L563 226 M576 215 L571 227 M543 233 l1 0 M578 233 l1 0 M558 241 L563 244 L568 240 M542 242 L523 238 M542 247 L523 252 M582 242 L601 238 M582 247 L602 251 M547 253 Q540 279 550 282 L582 282 Q591 269 597 265 Q609 259 610 271 Q608 283 590 283 M545 265 l10 3 M546 275 l9 2 M581 263 l-9 5 M585 275 l-11 2"/>
+</g>
+<g transform="translate(162 0)"><!-- Older daughter: shoulder-length hair, side part and hair clip. -->
+<path d="M241 216 C223 213 211 233 222 250 Q241 270 259 251 C273 233 260 215 241 216 Z M216 240 Q210 207 237 207 Q270 206 270 238 L275 272 Q265 278 256 271 M215 237 L210 272 Q219 279 226 271 M218 229 Q233 228 245 213 Q250 226 264 230 M254 216 l8 5 M253 221 l8 5 M231 236 l1 0 M250 236 l1 0 M232 248 Q241 254 250 247 M218 284 Q220 264 240 264 Q262 264 265 284"/>
+</g>
+<g transform="translate(160 0)"><!-- Younger son: neat short hair and ears. -->
+<path d="M403 218 C385 216 377 234 385 250 Q402 266 421 251 C432 232 421 218 403 218 Z M382 234 Q378 209 402 209 Q425 209 428 231 M383 224 Q395 224 403 214 Q411 224 426 225 M383 239 Q375 236 378 246 L385 248 M426 238 Q434 236 431 247 L424 249 M394 237 l1 0 M413 237 l1 0 M395 249 Q403 255 412 248 M379 284 Q381 264 403 264 Q425 264 428 284"/>
+</g>
+</g>
+<g fill="#fff"><circle cx="72" cy="231" r="3.4"/><circle cx="90" cy="231" r="3.4"/></g><g fill="#393939"><circle cx="72" cy="231" r="1.6"/><circle cx="90" cy="231" r="1.6"/></g>
+<g fill="#393939" font-family="'Hiragino Maru Gothic ProN','Yu Gothic',sans-serif" font-size="18" text-anchor="middle">
+<text x="236" y="143" transform="rotate(-2 236 143)">妻</text><text x="384" y="143" transform="rotate(2 384 143)">私</text>
+<text x="82" y="315" transform="rotate(-2 82 315)">ハチワレ</text><text x="241" y="315" transform="rotate(2 241 315)">キジトラ</text><text x="403" y="315" transform="rotate(-2 403 315)">長女</text><text x="563" y="315" transform="rotate(2 563 315)">長男</text>
+</g></svg>
