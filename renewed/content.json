@@ -23,22 +23,6 @@
       "description": "SANREN分析アプリは文部科学省が実施する産学連携等実施状況に関する調査データを用いた分析ツールです。主な機能としては、研究機関別の共同研究、受託研究、URA等の人材の配置状況等を分析・可視化できます。",
       "url": "https://takuyak0625.shinyapps.io/Sanren-App/",
       "image": "sanren_app.png"
-    },
-    {
-      "slug": "kaken_cleaning",
-      "title": "KAKENデータ整理アプリ",
-      "category": "データ整形",
-      "description": "KAKENデータ整理アプリはKAKENからダウンロードしたCSVファイルを研究者個人単位の個表データに変形するツールです。また、元データでは１つの列に格納されていた種々のデータを それぞれ独立した列に分割しています（例：研究代表者⇨研究者氏名、所属機関、職名、研究者番号、等）",
-      "url": "https://takuyak0625.shinyapps.io/KAKEN_to_DF/",
-      "image": "kaken_cleaning.png"
-    },
-    {
-      "slug": "wos_cleaning",
-      "title": "WoS論文整理アプリ",
-      "category": "データ整形",
-      "description": "Web of Scienceからダウンロードした論文データを著者単位に整理し、筆頭著者・責任著者や国際共著の状況を確認するためのツールです。",
-      "url": "https://takuyak0625.shinyapps.io/WoS_to_DF/",
-      "image": "wos_cleaning.png"
     }
   ],
   "publications": [
