@@ -1,0 +1,190 @@
+{
+  "name": "久保 琢也",
+  "english": "Takuya Kubo",
+  "degree": "博士（学術）",
+  "email": "",
+  "github": "https://github.com/TakuyaK0625",
+  "intro": "研究活動を、データから読み解く。",
+  "description": "人文社会系の研究活動の可視化、研究IRのための分析ツール開発、R言語の学習支援に取り組んでいます。",
+  "source_date": "2026年10月11日",
+  "tools": [
+    {
+      "slug": "kaken_app",
+      "title": "科研費分析アプリ",
+      "category": "研究力分析",
+      "description": "科研費分析アプリは文部科学省科学研究費助成事業（科研費）の採択課題情報を用いた分析ツールです。主な機能としては、研究機関別の採択件数や金額、審査区分別の採択課題の特徴、研究者のネットワーク等を分析・可視化できます。",
+      "url": "https://takuyak0625.shinyapps.io/KAKEN-App/",
+      "image": "kaken-comparison-wide.png"
+    },
+    {
+      "slug": "sanren_app",
+      "title": "SANREN分析アプリ",
+      "category": "産学連携",
+      "description": "SANREN分析アプリは文部科学省が実施する産学連携等実施状況に関する調査データを用いた分析ツールです。主な機能としては、研究機関別の共同研究、受託研究、URA等の人材の配置状況等を分析・可視化できます。",
+      "url": "https://takuyak0625.shinyapps.io/Sanren-App/",
+      "image": "sanren_app.png"
+    },
+    {
+      "slug": "kaken_cleaning",
+      "title": "KAKENデータ整理アプリ",
+      "category": "データ整形",
+      "description": "KAKENデータ整理アプリはKAKENからダウンロードしたCSVファイルを研究者個人単位の個表データに変形するツールです。また、元データでは１つの列に格納されていた種々のデータを それぞれ独立した列に分割しています（例：研究代表者⇨研究者氏名、所属機関、職名、研究者番号、等）",
+      "url": "https://takuyak0625.shinyapps.io/KAKEN_to_DF/",
+      "image": "kaken_cleaning.png"
+    },
+    {
+      "slug": "wos_cleaning",
+      "title": "WoS論文整理アプリ",
+      "category": "データ整形",
+      "description": "Web of Scienceからダウンロードした論文データを著者単位に整理し、筆頭著者・責任著者や国際共著の状況を確認するためのツールです。",
+      "url": "https://takuyak0625.shinyapps.io/WoS_to_DF/",
+      "image": "wos_cleaning.png"
+    }
+  ],
+  "publications": [
+    "久保琢也, 荻多加之, 草島雄一, 若松永憲, 加藤英之, 持橋大地, 小泉周 (2024)「MIRAI-DXを活用した研究大学コンソーシアム構成機関間の共同研究の実施状況に関する調査」『大学情報・機関調査研究集会 論文集』13, 92–98.",
+    "久保琢也 (2023)「産学連携等実施状況に関する分析ツールの開発」『大学情報・機関調査研究集会 論文集』12, 62–65.",
+    "Hajime Ono, Takuya Kubo, Manami Sato, Hiromu Sakai, Masatoshi Koizumi (2023) “Word orders, gestures, and a view of the world from OS languages.” Issues in Japanese Psycholinguistics from Comparative Perspectives: Volume 1: Cross-Linguistic Studies, 63–88.",
+    "Takuya Kubo (2023) “Factors affecting the choice of word order in Kaqchikel: Evidence from discourse saliency.” Issues in Japanese Psycholinguistics from Comparative Perspectives: Volume 1: Cross-Linguistic Studies, 89–104.",
+    "久保琢也 (2022)「大学図書館における人文社会系の専門書の所蔵状況―出版社を対象とした試行的分析―」『日本出版学会 2022年度秋季研究発表会 予稿集』12–18.",
+    "久保琢也 (2022)「人文社会系の引用文献の特徴 -言語・文学、経営学を対象として-」『研究・イノベーション学会 第37回年次学術大会 予稿集』474–477.",
+    "久保琢也, 平井克之 (2021)「研究IRにおける科研費分析の効率化を目指したWebアプリケーションの開発」『大学評価とIR』13, 3-12.",
+    "久保琢也, 伊藤広幸 (2021)「J-STAGEを活用した日本の学術論文データの整備」『大学評価とIR』12, 26-35.",
+    "平井克之, 岡崎麻紀子, 奥津佐恵子, 久保琢也, 矢吹命大, 渡邉優香 (2021)「研究力分析の効率化・高度化に関する Code for Research Administration の取組み:URAによる機関を越えた連携」『情報の科学と技術』",
+    "久保琢也 (2020)「大学図書館における人文社会系の専門書の所蔵状況 ―CiNii BooksとopenBDを用いた予備的調査―」 『第９回大学情報・機関調査研究集会 論文集』",
+    "久保琢也, 伊藤広幸 (2020)「基盤研究 (A) にステップアップした研究者の科研費採択履歴の特徴」『大学評価とIR』11, 15-24.",
+    "久保琢也 (2016)『OS語順の産出における普遍性と言語個別性 : カクチケル語VOS語順における検討』広島大学学位論文",
+    "久保琢也, 小野創, 田中幹大, 小泉政利, 酒井弘 (2015) 「カクチケル語VOS語順の産出メカニズム−有生性の効果を通して−」『認知科学』22(4), 591-603.",
+    "久保琢也 (2014)「カクチケル語における語順の選択に影響を与える要因−談話的卓立性を手がかりとして−」 『広島大学教育学研究科紀要』2(63)",
+    "久保琢也 (2013)「名詞句の類似性が語順の選択に与える影響−カクチケル語における検討−」『電子情報通信学会技 術研究報告』113, 63-68.",
+    "Hiromu Sakai, Takuya Kubo, Hajime Ono, Manami Sato, Masatoshi Koizumi (2012) “Does word order influence non-verbal event description by speakers of OS language?” Proceedings of the 34th Annual Meeting of the Cognitive Science Society (CogSci).",
+    "久保琢也 (2011)「VOS言語において有生性が語順に与える影響−カクチケル語における線画描写課題での検討−」『電子情報通信学会技 術研究報告』111, 19-24."
+  ],
+  "talks": [
+    "平井克之, 久保琢也, 森木銀河, 青沼有紀, 松本匡史 (2023年8月9日)「研究力分析の高度化に向けた自主的なプログラミング勉強会の取り組み」第9回リサーチアドミニストレーション協議会 年次大会",
+    "「IRerと部局担当URAの協働による 農学系の論文発表状況の可視化に向けた取組み」第9回リサーチアドミニストレーション協議会 年次大会（2023年8月9日）",
+    "久保琢也 (2022年12月3日)「大学図書館における人文社会系の専門書の所蔵状況―出版社を対象とした試行的分析―」日本出版学会 2022年度秋季研究発表会",
+    "久保琢也 (2022年10月29日)「人文社会系の引用文献の特徴 ─言語・文学、経営学を対象として─」研究・イノベーション学会 第37回年次学術大会",
+    "久保琢也 (2022年3月17日)「J-STAGEとCiNii Booksを活用した人文社会系の研究活動の可視化−実践と課題−」第13回JINSHA情報共有会with C4RA（招待講演）",
+    "久保琢也, 津村明子 (2022)「Microsoft Office 365を活用した科研費採択調書のオンライン閲覧制度」第８回リサーチ・アドミニストレーション協議会 年次大会",
+    "久保琢也, Hansen Marc, 平井克之, 間宮るい (2021)「機関を超えたURAによる産学連携等実施状況を分析するためのWebアプリケーションの開発」 第７回リサーチ・アドミニストレーター協議会 年次大会",
+    "伊藤広幸, 久保琢也 (2021)「多様な強みを把握するための研究力分析-AMEDfindとJ-STAGEを用いた試行」第７回リサーチアドミニストレーター協議会 年次大会",
+    "久保琢也, 伊藤広幸 (2021)「J-STAGEを活用した日本の学術論文データの整備」大学評価コンソーシアム 継続的改善のためのIR/IEセミナー「R1 IR実務担当者セッション」",
+    "久保琢也, Hansen Marc, 平井克之, 間宮るい (2021)「日本の大学の研究活動を分析するためのWebアプリケーションの開発−機関を越えた共同開発プロジェクト−」第10回超異分野学会",
+    "久保琢也 (2020)「大学図書館における人文社会系の専門書の所蔵状況―CiNii BooksとopenBDを用いた予備的調査―」第９回大学情報・機関調査研究集会",
+    "久保琢也 (2020)「R言語を用いたオンライン科研費分析ツールの開発−研究力分析業務の効率化・高度化・民主化に向けて−」第６回リサーチ・アドミニストレーター協議会 年次大会",
+    "久保琢也, 伊藤広幸 (2019)「信州大学の研究IR推進体制と調査分析事例」第３回研究大学コンソーシアムシンポジウム",
+    "田中久美子, 高橋仁, 久保琢也 (2019)「科研費を基にした外部資金獲得につながるURA支援の在り方についての考察」第５回リサーチ・アドミニストレーター協議会 年次大会",
+    "久保琢也, 伊藤広幸 (2019)「科研費ステップアップを後押しする科研費分析を目指して-基盤研究(A)採択者の科研費採択履歴調査とその活用-」第５回リサーチ・アドミニストレーター協議会 年次大会",
+    "久保琢也 (2017)「人文社会系学術雑誌リストの作成に挑む」第3回人文・社会科学系研究推進フォーラム",
+    "Kubo, T., Ono, H., Tanaka, M., Koizumi, M., Sakai, H. (2013) Effects of similarity in the Production of VOS word order in Kaqchikel. Architecture and Mechanisms of Language Processing (AMLaP)",
+    "Kubo, T., Ono, H., Tanaka, M., Koizumi, M., Sakai, H. (2012) How does animacy affect word order in a VOS language. Annual CUNY Conference on Human Sentence Processing"
+  ],
+  "awards": [
+    "2026年4月：文部科学大臣表彰 研究支援賞 研究開発マネジメント部門「研究の強みに基づく水研究拠点形成と産業波及への貢献」／文部科学省（受賞者：土井達也、宮原大地、鳥山香織、伊藤広幸、久保琢也）",
+    "2023年8月：第9回年次大会ポスター発表賞3位「IRerと部局担当URAの協働による 農学系の論文発表状況の可視化に向けた取組み」／リサーチ・アドミニストレーション協議会（受賞者：久保琢也、伊藤広幸、三宅誠司）",
+    "2021年9月：第7回年次大会個人発表賞「多様な強みを把握するための研究力分析-AMEDfindとJ-STAGEを用いた試行」／リサーチ・アドミニストレーション協議会（受賞者：伊藤広幸、久保琢也）",
+    "2021年9月：第7回年次大会個人発表賞「機関を超えたURAによる産学連携等実施状況を分析するためのWebアプリケーションの開発」／リサーチ・アドミニストレーション協議会（受賞者：久保琢也、Hansen Marc、平井克之、間宮るい）",
+    "2020年9月：第6回年次大会個人発表賞「R言語を用いたオンライン科研費分析ツールの開発− 研究力分析業務の効率化・高度化・民主化に向けて−」／リサーチ・アドミニストレーター協議会（受賞者：久保琢也）",
+    "2019年9月：第5回年次大会ポスター発表賞「科研費ステップアップを後押しする科研費分析を目指して- 基盤研究 (A) 採択者の科研費採択履歴調査とその活用 -」／リサーチ・アドミニストレーター協議会（受賞者：久保琢也、伊藤広幸）"
+  ],
+  "funding": [
+    "日本学術振興会 科学研究費助成事業 若手研究「人文社会系の専門書の出版数及び図書館における所蔵状況に関する包括的研究」2021年4月 - 2024年3月（代表）",
+    "第49回リバネス研究費 日本の研究.com賞「研究力調査分析業務の効率化・高度化・民主化に向けたオンライン分析ツールの開発」2020年10月（代表）",
+    "日本学術振興会 科学研究費助成事業 特別研究員奨励費「言語類型論的差異と文産出モデルの普遍性ーＯＳ言語における検討ー」2013年4月 - 2015年3月 （代表）"
+  ],
+  "courses": [
+    {
+      "slug": "r_slides_2020",
+      "title": "勉強会資料（2020年10月〜2021年3月）",
+      "links": [
+        "https://www.slideshare.net/slideshow/embed_code/key/NiP8NWVCnlihVa",
+        "https://www.slideshare.net/slideshow/embed_code/key/h8aSfYlwohKxJ9",
+        "https://www.slideshare.net/slideshow/embed_code/key/95yx0au4MQISjI",
+        "https://www.slideshare.net/slideshow/embed_code/key/bkFb0KHCKQRuwU",
+        "https://www.slideshare.net/slideshow/embed_code/key/LA3qrXDrgqthlc",
+        "https://www.slideshare.net/slideshow/embed_code/key/JAY1I3LHgWNutd",
+        "https://www.slideshare.net/slideshow/embed_code/key/LJBvlMbMtsDXdo",
+        "https://www.slideshare.net/slideshow/embed_code/key/8PfifqaNv5kk2c",
+        "https://www.slideshare.net/slideshow/embed_code/key/ApWBOuAASLveZX",
+        "https://www.slideshare.net/slideshow/embed_code/key/iX8TELRprjEP7Z",
+        "https://www.slideshare.net/slideshow/embed_code/key/7b0AGxtGYIk31X"
+      ]
+    },
+    {
+      "slug": "r_slides_2021",
+      "title": "勉強会資料（2021年11月〜2022年7月）",
+      "links": [
+        "https://www.slideshare.net/slideshow/embed_code/key/JyfUQrBmgGncLg",
+        "https://www.slideshare.net/slideshow/embed_code/key/PKthYWkDDrACs",
+        "https://www.slideshare.net/slideshow/embed_code/key/GjwsVNlmKWN2Ok",
+        "https://www.slideshare.net/slideshow/embed_code/key/KOiNq7OQZ6Hakd"
+      ]
+    }
+  ],
+  "career": [
+    "2023年2月〜現在：信州大学 学術研究・産学官連携推進機構 准教授（特定雇用）（IRer／URA）",
+    "2021年8月〜2023年1月：横浜国立大学 研究推進機構 特任教員（講師）",
+    "2019年4月〜2021年7月：信州大学 学術研究・産学官連携推進機構 助教（URA）",
+    "2016年5月〜2019年3月：広島大学 学術室研究企画室 URA",
+    "2013年4月〜2015年3月：日本学術振興会 特別研究員（DC2）"
+  ],
+  "education": [
+    "2016年3月：広島大学大学院教育学研究科 修了（博士）",
+    "2012年3月：広島大学大学院教育学研究科 修了（修士）",
+    "2009年3月：広島大学教育学部 卒業",
+    "2005年3月：熊本県立熊本高等学校 卒業"
+  ],
+  "qualifications": [
+    "Data Science Specialization（Coursera, Johns Hopkins University）",
+    "第5期 PM育成・活躍推進プログラム 修了（JST）",
+    "知的財産管理技能検定3級",
+    "多変量解析実務講座 修了",
+    "現代統計実務講座 修了"
+  ],
+  "affiliation": "信州大学 学術研究・産学官連携推進機構",
+  "position": "准教授（特定雇用）／IRer／URA／コンペ師",
+  "researchmap": "https://researchmap.jp/kubotaku",
+  "orcid": "https://orcid.org/0000-0002-6219-3835",
+  "committees": [
+    "2024年12月〜2026年11月：研究・イノベーション学会 総務理事",
+    "2023年2月〜現在：大学情報・機関調査研究集会 実行委員会委員",
+    "2021年10月〜現在：リサーチ・アドミニストレーション協議会 スキルプログラム専門委員会",
+    "2025年1月〜12月：大学情報・機関調査研究集会 編集委員長",
+    "2024年1月〜12月：大学情報・機関調査研究集会 副委員長",
+    "2020年〜2021年7月：研究大学コンソーシアム 研究力分析タスクフォース",
+    "2020年〜2021年7月：研究大学コンソーシアム 異分野融合タスクフォース"
+  ],
+  "home_description": "大学等におけるInstitutional Research業務や分析ツールの開発に取り組むほか、\nURA等の研究開発マネジメント人材の育成にも従事しています。",
+  "profile_paragraphs": [
+    "大学では日本語教育を専攻し、日本語の文法や教授法、異文化理解などを学んできました。その過程で、人が言語を理解したり話したりするメカニズムに特に関心を持ったため、大学院では心理言語学の分野で博士号を取得しました。",
+    "学位取得後は就職難もあってURAとなり、大学の研究開発マネジメントに携わることになりました。赴任当初はプレアワードやポストアワードなど幅広く担当しましたが、大学院で培ったデータ分析の知識やスキルを活用したく、転職を機にIR業務を担うようになりました。",
+    "IR担当になってからは公益的な活動も始めて、他機関のURA等を対象にR言語の勉強会を開いたり、分析ツールを作って共有する等してきました。こうした活動を通じて、自分の中で新しい知識の獲得やスキルアップが図られてきたと感じています。",
+    "これまでに、転職は３回ほど経験しています。各機関の特色やスタイル、ポリシー、価値観、体質等、共通する点や異なる点を体験できたことは、研究開発マネジメント人材として良い経験となりました。",
+    "また、まだまだキャリアパスがはっきりしない研究開発マネジメント人材にとっては、転職がキャリアアップのための重要な選択肢の１つであるということも実感しています。そういう意味では今後も何処かを渡り歩く人生かもしれません。",
+    "さて、最近は生成AIの目覚ましい発展に伴って、IR業務だけでなく、大学の業務そのものが大きな変革を求められるようになりました。そのため、我々、研究開発マネジメント人材にとって重要なスキルは何か、また、それをどのように伸ばすことができるのか、ということを課題として捉えています。",
+    "そこで、新たに始めたのが「ゆるコンペ」です。URA業務に関する共通のお題に取り組み、互いの工夫から学ぶことで、楽しみながらスキルを磨ける場を目指しています。生成AIの活用も含め、これからの業務に必要なスキルを実践を通じて探っていきたいと考えています。"
+  ],
+  "facebook": "https://www.facebook.com/takuya.kubo.963871?locale=ja_JP",
+  "twitter": "https://x.com/Takuyak0625",
+  "recent_activities": [
+    {
+      "title": "分析ツールの開発",
+      "description": "大学等の研究活動等に関するオープンデータを用いて、IR業務に役立つ分析ツールを開発しています。一般に公開していますので、どなたでも無料で使えます。",
+      "url": "tools/",
+      "image": "kaken-comparison-wide.png",
+      "image_alt": "科研費分析アプリ：機関間比較（規模別）",
+      "link_label": "公開ツールを見る →",
+      "image_caption": "科研費分析アプリ"
+    },
+    {
+      "title": "ゆるコンペ",
+      "description": "URA業務に関する共通のお題への取り組みと交流を通じて学び合うイベントを主催しています（※RA協議会スキルプログラム専門委員会の活動として実施しています）。",
+      "url": "https://ra-skillpro.github.io/Yuru-Competition/",
+      "image": "yuru-home.jpg",
+      "image_alt": "ゆるコンペのトップページ",
+      "link_label": "ゆるコンペのサイトを見る ↗",
+      "image_caption": "ゆるこんぺウェブサイト"
+    }
+  ]
+}
