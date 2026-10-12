@@ -49,3 +49,5 @@ footer>div:last-child>a+a{margin-left:18px}
 .tools-list .tool-card{display:flex;flex-direction:column;gap:18px}.tools-list .tool-copy{order:-1;padding-top:0}
 
 .training-records{padding-left:1.4em;margin:18px 0 0}.training-records li{padding:5px 0}
+
+.home-portrait{width:180px;height:180px;object-fit:contain}
