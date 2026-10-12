@@ -25,7 +25,7 @@ def page(slug,title,body):
  target=OUT / slug if slug else OUT; target.mkdir(exist_ok=True); (target/'index.html').write_text(markup,encoding='utf-8')
 def heading(kicker,title,desc=''): return '<section class="page-head"><p class="eyebrow">'+kicker+'</p><h1>'+title+'</h1><p>'+desc+'</p></section>'
 def toolcards(prefix='./'):
- return ''.join('<a class="tool-card" href="'+prefix+t['slug']+'/"><div class="tool-image"><img loading="lazy" src="'+prefix+'assets/'+t['image']+'" alt="'+e(t['title'])+'の画面"></div><div class="tool-copy"><span class="eyebrow">'+e(t['category'])+'</span><h3>'+e(t['title'])+' <span>↗</span></h3><p>'+e(t['description'])+'</p></div></a>' for t in D['tools'] if t['slug'] in ('kaken_app','sanren_app'))
+ return ''.join('<a class="tool-card" href="'+e(t['url'])+'"><div class="tool-image"><img loading="lazy" src="'+prefix+'assets/'+t['image']+'" alt="'+e(t['title'])+'の画面"></div><div class="tool-copy"><span class="eyebrow">'+e(t['category'])+'</span><h3>'+e(t['title'])+' <span>↗</span></h3><p>'+e(t['description'])+'</p></div></a>' for t in D['tools'] if t['slug'] in ('kaken_app','sanren_app'))
 body='<section class="home-intro"><div class="home-bio"><h1>'+e(D['name'])+'</h1><p class="english-name">'+e(D['english'])+' / '+e(D['degree'])+'</p><p>'+e(D['affiliation'])+'<br>'+e(D['position'])+'</p><p class="intro">'+e(D['home_description']).replace('\n','<br>')+'</p><div class="external-links">'+social_links('./')+'</div></div><img class="home-portrait" src="./assets/portrait.png" alt="久保琢也の顔写真"></section>'
 body+='<section class="section recent-activities"><h2>最近の取り組み</h2><div class="activities-grid">'
 for activity in D['recent_activities']:
