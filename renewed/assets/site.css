@@ -51,3 +51,5 @@ footer>div:last-child>a+a{margin-left:18px}
 .training-records{padding-left:1.4em;margin:18px 0 0}.training-records li{padding:5px 0}
 
 .home-portrait{width:180px;height:180px;object-fit:contain}
+
+.profile-story .story-subheading{font-size:18px;margin:32px 0 14px}.profile-story .story-subheading:first-of-type{margin-top:0}
