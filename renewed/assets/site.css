@@ -53,3 +53,5 @@ footer>div:last-child>a+a{margin-left:18px}
 .home-portrait{width:180px;height:180px;object-fit:contain}
 
 .profile-story .story-subheading{font-size:18px;margin:32px 0 14px}.profile-story .story-subheading:first-of-type{margin-top:0}
+
+.profile-story>h2{font-size:26px;font-weight:700;margin-bottom:30px}.profile-story .story-subheading{font-size:16px;font-weight:600;color:#555;border-left:2px solid #b8b8b8;padding-left:12px;margin:34px 0 14px}.profile-story .story-subheading:first-of-type{margin-top:0}
