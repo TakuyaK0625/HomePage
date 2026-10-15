@@ -16,3 +16,12 @@ if(search) search.addEventListener('input', () => {
  });
  document.querySelector('#search-status').textContent = q ? `${count}件の業績が見つかりました。` : '';
 });
+
+// Measure only the published homepage, excluding local previews.
+if (location.hostname === 'takuyak0625.github.io' && location.pathname.startsWith('/HomePage/')) {
+ const beacon = document.createElement('script');
+ beacon.type = 'module';
+ beacon.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+ beacon.setAttribute('data-cf-beacon', JSON.stringify({token: '3b9e699405dc490d865bcc992ebbc98c'}));
+ document.body.appendChild(beacon);
+}
